@@ -116,7 +116,9 @@ export default function Hero() {
             </Link>
 
             <Link
-              href="/kontak"
+              href="https://wa.me/6285138534353?text=Halo%20saya%20ingin%20pesan%20paket%20wisata%20Oceania"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base bg-white/90 backdrop-blur-sm text-oceania-navy shadow-lg hover:bg-white hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
               Hubungi Kami

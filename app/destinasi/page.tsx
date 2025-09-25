@@ -7,205 +7,13 @@ import { Input } from "@/components/ui/input";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star, Search, MapPin, X } from "lucide-react";
 import Image from "next/image";
-
-// const allDestinasi = [
-//   {
-//     id: 1,
-//     nama: "Pantai Tanjung Tinggi",
-//     lokasi: "Belitung, Bangka Belitung",
-//     rating: 4.8,
-//     kategori: "Pantai",
-//     gambar: "/images/destinasi.png",
-//     deskripsi: "Pantai dengan batu granit raksasa yang ikonik",
-//     detail:
-//       "Pantai Tanjung Tinggi terkenal dengan pasir putih dan batu granit raksasa yang tersebar di sepanjang pantai. Air lautnya jernih dan cocok untuk berenang maupun snorkeling. Pantai Tanjung Tinggi terkenal dengan pasir putih dan batu granit raksasa yang tersebar di sepanjang pantai. Air lautnya jernih dan cocok untuk berenang maupun snorkeling. Pantai Tanjung Tinggi terkenal dengan pasir putih dan batu granit raksasa yang tersebar di sepanjang pantai. Air lautnya jernih dan cocok untuk berenang maupun snorkeling.",
-//     footage: [
-//       "/images/destinasi1.png",
-//       "/images/destinasi2.png",
-//       "/images/destinasi3.png",
-//       "/images/destinasi4.png",
-//       "/images/destinasi1.png",
-//       "/images/destinasi2.png",
-//       "/images/destinasi4.png",
-//       "/images/destinasi1.png",
-//       "/images/destinasi2.png",
-//     ],
-//   },
-//   {
-//     id: 2,
-//     nama: "Pulau Lengkuas",
-//     lokasi: "Belitung, Bangka Belitung",
-//     rating: 4.9,
-//     kategori: "Pulau",
-//     gambar: "/images/destinasi1.png",
-//     deskripsi: "Mercusuar bersejarah dengan pemandangan 360°",
-//     detail: "Pulau Lengkuas memiliki mercusuar peninggalan Belanda yang bisa dinaiki untuk melihat panorama laut dan pulau-pulau kecil di sekitarnya.",
-//     footage: ["/images/destinasi4.png", "/images/destinasi5.png", "/images/destinasi6.png", "/images/destinasi7.png", "/images/destinasi8.png"],
-//   },
-//   {
-//     id: 3,
-//     nama: "Danau Kaolin",
-//     lokasi: "Tanjung Pandan",
-//     rating: 4.7,
-//     kategori: "Danau",
-//     gambar: "/images/destinasi3.png",
-//     deskripsi: "Danau buatan dengan air biru tosca memukau",
-//     detail: "Danau Kaolin terbentuk dari bekas penambangan kaolin, menghasilkan air berwarna biru tosca yang kontras dengan tanah putih di sekitarnya.",
-//     footage: ["/images/destinasi7.png", "/images/destinasi8.png", "/images/destinasi9.png", "/images/destinasi1.png", "/images/destinasi2.png"],
-//   },
-//   // Tambahkan data dummy lain jika perlu...
-// ];
-const allDestinasi = [
-  {
-    id: 1,
-    nama: "Pantai Tanjung Tinggi",
-    lokasi: "Belitung, Bangka Belitung",
-    rating: 4.8,
-    kategori: "Pantai",
-    gambar: "/images/destinasi1.png",
-    deskripsi: "Pantai dengan batu granit raksasa yang ikonik",
-    detail: "Pantai Tanjung Tinggi terkenal dengan pasir putih dan batu granit raksasa yang tersebar di sepanjang pantai. Air lautnya jernih dan cocok untuk berenang maupun snorkeling.",
-    footage: ["/images/destinasi1.png", "/images/destinasi2.png", "/images/destinasi3.png"],
-  },
-  {
-    id: 2,
-    nama: "Pulau Lengkuas",
-    lokasi: "Belitung, Bangka Belitung",
-    rating: 4.9,
-    kategori: "Pulau",
-    gambar: "/images/destinasi2.png",
-    deskripsi: "Mercusuar bersejarah dengan pemandangan 360°",
-    detail: "Pulau Lengkuas memiliki mercusuar peninggalan Belanda yang bisa dinaiki untuk melihat panorama laut dan pulau-pulau kecil di sekitarnya.",
-    footage: ["/images/destinasi4.png", "/images/destinasi5.png", "/images/destinasi6.png"],
-  },
-  {
-    id: 3,
-    nama: "Danau Kaolin",
-    lokasi: "Tanjung Pandan",
-    rating: 4.7,
-    kategori: "Danau",
-    gambar: "/images/destinasi3.png",
-    deskripsi: "Danau buatan dengan air biru tosca memukau",
-    detail: "Danau Kaolin terbentuk dari bekas penambangan kaolin, menghasilkan air berwarna biru tosca yang kontras dengan tanah putih di sekitarnya.",
-    footage: ["/images/destinasi7.png", "/images/destinasi1.png", "/images/destinasi2.png"],
-  },
-  {
-    id: 4,
-    nama: "Pantai Tanjung Kelayang",
-    lokasi: "Belitung, Bangka Belitung",
-    rating: 4.6,
-    kategori: "Pantai",
-    gambar: "/images/destinasi4.png",
-    deskripsi: "Pantai tenang dengan gugusan pulau kecil di sekitarnya",
-    detail: "Pantai Tanjung Kelayang terkenal dengan batu granit besar berbentuk kepala burung, serta pasir putih dan ombak yang tenang.",
-    footage: ["/images/destinasi2.png", "/images/destinasi5.png", "/images/destinasi7.png"],
-  },
-  {
-    id: 5,
-    nama: "Pulau Batu Berlayar",
-    lokasi: "Belitung, Bangka Belitung",
-    rating: 4.5,
-    kategori: "Pulau",
-    gambar: "/images/destinasi5.png",
-    deskripsi: "Pulau kecil dengan batu granit menyerupai layar",
-    detail: "Pulau Batu Berlayar hanya muncul saat air laut surut. Pulau ini dihiasi batu granit besar yang menjulang tinggi seperti layar kapal.",
-    footage: ["/images/destinasi1.png", "/images/destinasi3.png", "/images/destinasi6.png"],
-  },
-  {
-    id: 6,
-    nama: "Pantai Punai",
-    lokasi: "Belitung Timur",
-    rating: 4.4,
-    kategori: "Pantai",
-    gambar: "/images/destinasi6.png",
-    deskripsi: "Pantai eksotis dengan suasana tenang dan alami",
-    detail: "Pantai Punai terkenal dengan keindahan sunrise dan suasana yang masih alami, cocok untuk menikmati ketenangan.",
-    footage: ["/images/destinasi2.png", "/images/destinasi4.png", "/images/destinasi7.png"],
-  },
-  {
-    id: 7,
-    nama: "Pulau Pasir",
-    lokasi: "Belitung, Bangka Belitung",
-    rating: 4.3,
-    kategori: "Pulau",
-    gambar: "/images/destinasi7.png",
-    deskripsi: "Pulau pasir timbul yang unik di tengah laut",
-    detail: "Pulau Pasir hanya muncul saat air laut surut, membentuk daratan kecil dengan pasir putih halus yang dikelilingi laut biru.",
-    footage: ["/images/destinasi3.png", "/images/destinasi5.png", "/images/destinasi6.png"],
-  },
-  {
-    id: 8,
-    nama: "Gunung Tajam",
-    lokasi: "Belitung Timur",
-    rating: 4.6,
-    kategori: "Gunung",
-    gambar: "/images/destinasi1.png",
-    deskripsi: "Gunung tertinggi di Belitung dengan panorama alam",
-    detail: "Gunung Tajam memiliki jalur pendakian yang menantang dengan pemandangan hutan tropis dan panorama laut dari puncaknya.",
-    footage: ["/images/destinasi2.png", "/images/destinasi4.png", "/images/destinasi6.png"],
-  },
-  {
-    id: 9,
-    nama: "Batu Baginda",
-    lokasi: "Belitung Selatan",
-    rating: 4.5,
-    kategori: "Batu Alam",
-    gambar: "/images/destinasi2.png",
-    deskripsi: "Batu granit raksasa dengan panorama laut",
-    detail: "Batu Baginda adalah batu granit besar di tepi laut yang menjadi spot populer untuk menikmati sunset dan panorama pesisir.",
-    footage: ["/images/destinasi3.png", "/images/destinasi5.png", "/images/destinasi7.png"],
-  },
-  {
-    id: 10,
-    nama: "Pantai Penyabong",
-    lokasi: "Belitung Selatan",
-    rating: 4.7,
-    kategori: "Pantai",
-    gambar: "/images/destinasi3.png",
-    deskripsi: "Pantai dengan gugusan batu granit besar",
-    detail: "Pantai Penyabong terkenal dengan susunan batu granit besar yang menjorok ke laut, menciptakan panorama unik.",
-    footage: ["/images/destinasi1.png", "/images/destinasi4.png", "/images/destinasi6.png"],
-  },
-  {
-    id: 11,
-    nama: "Air Terjun Gunung Tajam",
-    lokasi: "Belitung Timur",
-    rating: 4.4,
-    kategori: "Bukit",
-    gambar: "/images/destinasi4.png",
-    deskripsi: "Air terjun alami di kaki Gunung Tajam",
-    detail: "Air Terjun Gunung Tajam menawarkan suasana segar dengan aliran air jernih di tengah hutan tropis.",
-    footage: ["/images/destinasi2.png", "/images/destinasi5.png", "/images/destinasi7.png"],
-  },
-  {
-    id: 12,
-    nama: "Gunung Begandi",
-    lokasi: "Belitung Selatan",
-    rating: 4.3,
-    kategori: "Bukit",
-    gambar: "/images/destinasi5.png",
-    deskripsi: "Gunung dengan jalur trekking alami",
-    detail: "Gunung Begandi merupakan gunung dengan jalur trekking yang menantang, cocok untuk pecinta petualangan.",
-    footage: ["/images/destinasi1.png", "/images/destinasi3.png", "/images/destinasi6.png"],
-  },
-  {
-    id: 13,
-    nama: "Gunung Agung",
-    lokasi: "Belitung",
-    rating: 4.2,
-    kategori: "Bukit",
-    gambar: "/images/destinasi6.png",
-    deskripsi: "Gunung dengan panorama alam menawan",
-    detail: "Gunung Agung di Belitung dikenal dengan pemandangan alamnya yang indah dan udara segar pegunungan.",
-    footage: ["/images/destinasi2.png", "/images/destinasi4.png", "/images/destinasi7.png"],
-  },
-];
+import { allDestinasi, Destinasi } from "@/lib/destinasi";
 
 export default function DestinasiPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedKategori, setSelectedKategori] = useState("Semua");
-  const [sortOption, setSortOption] = useState("nama"); // default sorting
-  const [activeDestinasi, setActiveDestinasi] = useState<(typeof allDestinasi)[0] | null>(null);
+  const [sortOption, setSortOption] = useState("nama");
+  const [activeDestinasi, setActiveDestinasi] = useState<Destinasi | null>(null);
   const [previewIndex, setPreviewIndex] = useState<number | null>(null);
 
   const kategoris = useMemo(() => {
@@ -220,7 +28,6 @@ export default function DestinasiPage() {
       return matchesSearch && matchesKategori;
     });
 
-    // Sorting logic
     if (sortOption === "nama") {
       result = result.sort((a, b) => a.nama.localeCompare(b.nama));
     } else if (sortOption === "rating") {
@@ -230,7 +37,6 @@ export default function DestinasiPage() {
     return result;
   }, [searchTerm, selectedKategori, sortOption]);
 
-  // Untuk galeri preview
   const handlePrev = () => {
     if (previewIndex === null || activeDestinasi === null) return;
     const total = 1 + activeDestinasi.footage.length;

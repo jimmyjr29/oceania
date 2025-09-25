@@ -17,7 +17,7 @@ const Navbar = () => {
   const menuItems = [
     { name: "Beranda", href: "#beranda" },
     { name: "Destinasi", href: "#destinasi" },
-    { name: "Paket Wisata", href: "#paket-wisata" },
+    { name: "Paket Wisata", href: "#paket" },
     { name: "Galeri", href: "#galery" },
     { name: "Tentang Kami", href: "/tentang" },
     { name: "Kontak", href: "/kontak" },
@@ -99,7 +99,7 @@ const Navbar = () => {
 
             {/* CTA Button */}
             <a
-              href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20pesan%20paket%20wisata%20Oceania"
+              href="https://wa.me/6285138534353?text=Halo%20saya%20ingin%20pesan%20paket%20wisata%20Oceania"
               target="_blank"
               rel="noopener noreferrer"
               className="relative overflow-hidden inline-flex items-center justify-center backdrop-blur-md bg-white/20 text-blue-950 font-semibold rounded-xl px-5 py-2 text-sm transition-all duration-300 hover:bg-orange-500 hover:text-white shadow-lg hover:shadow-xl"
@@ -140,7 +140,7 @@ const Navbar = () => {
 
           {/* CTA Button Mobile */}
           <a
-            href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20pesan%20paket%20wisata%20Oceania"
+            href="https://wa.me/6285138534353?text=Halo%20saya%20ingin%20pesan%20paket%20wisata%20Oceania"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-3 w-full backdrop-blur-md bg-white/20 text-blue-950 font-bold py-2 px-2 rounded-xl shadow-lg transition-all duration-500 transform hover:scale-105 hover:bg-orange-500 hover:text-white block text-center"

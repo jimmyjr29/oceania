@@ -11,44 +11,39 @@ import Link from "next/link";
 const destinasi = [
   {
     id: 1,
-    nama: "Pantai Tanjung Tinggi",
-    lokasi: "Belitung, Bangka Belitung",
+    nama: "Pulau Lengkuas",
+    lokasi: "Belitung",
     rating: 4.8,
-    gambar: "/images/destinasi.png",
-    deskripsi: "Pantai dengan batu granit raksasa yang ikonik",
+    // kategori: "Pulau",
+    gambar: "/images/destinasi/Lengkuas.png",
+    deskripsi: "Pulau kecil dengan mercusuar ikonik abad ke-19 dan laut sebening kaca.",
     detail:
-      "Pantai Tanjung Tinggi terkenal dengan pasir putih dan batu granit raksasa yang tersebar di sepanjang pantai. Air lautnya jernih dan cocok untuk berenang maupun snorkeling. Pantai Tanjung Tinggi terkenal dengan pasir putih dan batu granit raksasa yang tersebar di sepanjang pantai. Air lautnya jernih dan cocok untuk berenang maupun snorkeling. Pantai Tanjung Tinggi terkenal dengan pasir putih dan batu granit raksasa yang tersebar di sepanjang pantai. Air lautnya jernih dan cocok untuk berenang maupun snorkeling",
-    footage: [
-      "/images/destinasi1.png",
-      "/images/destinasi2.png",
-      "/images/destinasi3.png",
-      "/images/destinasi4.png",
-      "/images/destinasi1.png",
-      "/images/destinasi2.png",
-      "/images/destinasi4.png",
-      "/images/destinasi1.png",
-      "/images/destinasi2.png",
-    ],
+      "Pulau Lengkuas merupakan salah satu ikon wisata Belitung dengan mercusuar peninggalan Belanda yang menjulang tinggi sejak abad ke-19. Dikelilingi pasir putih dan air laut sebening kaca, pulau ini menjadi spot favorit untuk snorkeling, diving, maupun sekadar menikmati panorama dari atas mercusuar.",
+    footage: ["/images/destinasi1.png", "/images/destinasi2.png", "/images/destinasi3.png"],
   },
   {
     id: 2,
-    nama: "Pulau Lengkuas",
-    lokasi: "Belitung, Bangka Belitung",
+    nama: "Sekolah Laskar Pelangi",
+    lokasi: "Belitung",
     rating: 4.9,
-    gambar: "/images/destinasi1.png",
-    deskripsi: "Mercusuar bersejarah dengan pemandangan 360°",
-    detail: "Pulau Lengkuas memiliki mercusuar peninggalan Belanda yang bisa dinaiki untuk melihat panorama laut dan pulau-pulau kecil di sekitarnya.",
-    footage: ["/images/destinasi4.png", "/images/destinasi5.png", "/images/destinasi6.png"],
+    // kategori: "Wisata Edukasi",
+    gambar: "/images/destinasi/Laskar-pelangi.png",
+    deskripsi: "Sekolah replika bangunan sekolah sederhana yang terkenal dari novel dan film Laskar Pelangi.",
+    detail:
+      "Sekolah Laskar Pelangi adalah replika bangunan sekolah sederhana yang terkenal dari novel dan film Laskar Pelangi. Tempat ini menjadi simbol semangat pendidikan dan perjuangan anak-anak Belitung dalam meraih mimpi. Wisatawan dapat merasakan atmosfer penuh inspirasi sekaligus bernostalgia dengan kisah yang mendunia ini.",
+    footage: ["/images/destinasi8.png", "/images/destinasi9.png", "/images/destinasi10.png"],
   },
   {
     id: 3,
-    nama: "Danau Kaolin",
-    lokasi: "Tanjung Pandan",
-    rating: 4.7,
-    gambar: "/images/destinasi3.png",
-    deskripsi: "Danau buatan dengan air biru tosca memukau",
-    detail: "Danau Kaolin terbentuk dari bekas penambangan kaolin, menghasilkan air berwarna biru tosca yang kontras dengan tanah putih di sekitarnya.",
-    footage: ["/images/destinasi7.png", "/images/destinasi8.png", "/images/destinasi9.png"],
+    nama: "Pantai Tanjung Tinggi",
+    lokasi: "Belitung",
+    rating: 4.9,
+    // kategori: "Pantai",
+    gambar: "/images/destinasi/TG-tinggi.png",
+    deskripsi: "Pantai ikonik dengan granit raksasa dan pasir putih luas.",
+    detail:
+      "Pantai Tanjung Tinggi menjadi salah satu destinasi paling populer di Belitung, dikenal dengan batu granit raksasa yang tersebar di sepanjang garis pantainya. Pasir putih, air laut biru jernih, serta suasana yang pernah diabadikan dalam film Laskar Pelangi menjadikannya tempat sempurna untuk berenang, bermain, atau berburu sunset.",
+    footage: ["/images/destinasi4.png", "/images/destinasi5.png", "/images/destinasi6.png"],
   },
 ];
 
@@ -257,7 +252,7 @@ export default function DestinasiSection() {
             <Link href="/destinasi">
               <span>Lihat Semua Destinasi</span>
               <motion.span animate={{ x: [0, 5, 0] }} transition={{ duration: 2, repeat: Infinity }} className="ml-3">
-                🏝️
+                →
               </motion.span>
             </Link>
           </Button>

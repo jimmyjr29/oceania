@@ -38,7 +38,7 @@ export default function CtaBanner() {
                 size="lg"
                 className="bg-gradient-to-r from-oceania-navy to-blue-950 hover:from-oceania-navy/90 hover:to-blue-950/90 text-white font-bold py-4 px-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
               >
-                <Link href="https://wa.me/6281234567890?text=Halo%20Oceania%20Travel!%20Saya%20ingin%20booking%20paket%20wisata." target="_blank">
+                <Link href="https://wa.me/6285138534353?text=Halo%20Oceania%20Travel!%20Saya%20ingin%20booking%20paket%20wisata." target="_blank">
                   Booking Sekarang
                   <ArrowUpRight className="h-5! w-5!" />
                 </Link>

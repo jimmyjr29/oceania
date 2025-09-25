@@ -158,7 +158,7 @@ export default function GaleriSection() {
           <Link href="/galery">
             <span>Lihat Semua Galery</span>
             <motion.span animate={{ x: [0, 5, 0] }} transition={{ duration: 2, repeat: Infinity }} className="ml-3 inline-block">
-              📸
+              →
             </motion.span>
           </Link>
         </Button>

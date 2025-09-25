@@ -70,7 +70,7 @@ const Footer = () => {
               <MailIcon size={14} /> <small> oceaniaid@gmail.com</small>
             </div>
             <div className="mt-2 flex items-center gap-2 text-slate-200">
-              <PiWhatsappLogo size={14} /> <small> +62 851-2113-7807</small>
+              <PiWhatsappLogo size={14} /> <small> +62 6285138534353</small>
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@
 
 import { Globe, Users, BadgeDollarSign, Ship, ShieldCheck, Headset } from "lucide-react";
 import { BorderBeam } from "./magicui/border-beam";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 // Data alasan
 const reasons = [
@@ -39,7 +39,7 @@ const reasons = [
 ];
 
 // Variants animasi grid dan item
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -49,13 +49,16 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, scale: 0.9, y: 20 },
   show: {
     opacity: 1,
     scale: 1,
     y: 0,
-    transition: { duration: 0.4, ease: "easeOut" }, // use a valid string for ease
+    transition: {
+      duration: 0.4,
+      ease: [0.4, 0, 0.2, 1], // cubic-bezier untuk easeOut
+    },
   },
 };
 

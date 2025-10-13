@@ -44,45 +44,38 @@ export default function ContactPage() {
               <MapPin className="w-6 h-6 text-orange-500" />
               <div>
                 <h4 className="font-semibold text-blue-950">Alamat</h4>
-                <p className="text-slate-600">Jl. Pantai Tanjung Tinggi No. 45, Belitung</p>
+                <p className="text-slate-600">Jl. Masda Adi Sucipto, Tanjungpandan, Belitung</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
               <Mail className="w-6 h-6 text-orange-500" />
               <div>
                 <h4 className="font-semibold text-blue-950">Email</h4>
-                <p className="text-slate-600">info@oceaniatravel.id</p>
+                <p className="text-slate-600">oceaniaid@gmail.com</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
               <Phone className="w-6 h-6 text-orange-500" />
               <div>
                 <h4 className="font-semibold text-blue-950">Telepon</h4>
-                <p className="text-slate-600">+62 812-3456-7890</p>
+                <p className="text-slate-600">+62 851-3853-4353</p>
               </div>
             </div>
-            {/* <div className="flex items-start gap-4">
-              <Clock className="w-6 h-6 text-orange-500" />
-              <div>
-                <h4 className="font-semibold text-blue-950">Jam Operasional</h4>
-                <p className="text-slate-600">Senin - Minggu, 08:00 - 21:00</p>
-              </div>
-            </div> */}
 
             {/* Sosial Media */}
             <div className="pt-4 border-t border-slate-200">
               <h4 className="font-semibold text-blue-950 mb-3">Ikuti Kami</h4>
               <div className="flex gap-4">
-                <Link href="https://instagram.com" target="_blank" className="p-3 rounded-full bg-gradient-to-tr from-pink-500 to-orange-500 text-white shadow-md hover:scale-110 transition-transform">
+                <Link href="https://www.instagram.com/oceania.id/" target="_blank" className="p-3 rounded-full bg-gradient-to-tr from-pink-500 to-orange-500 text-white shadow-md hover:scale-110 transition-transform">
                   <Instagram className="w-5 h-5" />
                 </Link>
-                <Link href="https://tiktok.com" target="_blank" className="p-3 rounded-full bg-black text-white shadow-md hover:scale-110 transition-transform">
+                <Link href="https://www.tiktok.com/@oceania.id" target="_blank" className="p-3 rounded-full bg-black text-white shadow-md hover:scale-110 transition-transform">
                   <SiTiktok className="w-5 h-5" />
                 </Link>
-                <Link href="https://wa.me/6281234567890" target="_blank" className="p-3 rounded-full bg-green-500 text-white shadow-md hover:scale-110 transition-transform">
+                <Link href="https://wa.me/6285138534353" target="_blank" className="p-3 rounded-full bg-green-500 text-white shadow-md hover:scale-110 transition-transform">
                   <SiWhatsapp className="w-5 h-5" />
                 </Link>
-                <Link href="mailto:info@oceaniatravel.id" className="p-3 rounded-full bg-blue-600 text-white shadow-md hover:scale-110 transition-transform">
+                <Link href="mailto:oceaniaid@gmail.com" className="p-3 rounded-full bg-blue-600 text-white shadow-md hover:scale-110 transition-transform">
                   <Mail className="w-5 h-5" />
                 </Link>
               </div>

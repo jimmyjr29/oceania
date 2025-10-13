@@ -8,57 +8,7 @@ import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Marquee } from "@/components/magicui/marquee";
 import { Button } from "./ui/button";
-
-const galleryItems = [
-  {
-    id: 1,
-    category: "pantai",
-    image: "/images/destinasi1.png",
-    title: "Sunset di Tanjung Tinggi",
-  },
-  {
-    id: 2,
-    category: "island",
-    image: "/images/destinasi2.png",
-    title: "Pulau Lengkuas",
-  },
-  {
-    id: 3,
-    category: "kuliner",
-    image: "/images/destinasi3.png",
-    title: "Seafood Fresh",
-  },
-  {
-    id: 4,
-    category: "budaya",
-    image: "/images/destinasi4.png",
-    title: "Museum Kata",
-  },
-  {
-    id: 5,
-    category: "customer",
-    image: "/images/destinasi5.png",
-    title: "Happy Travelers",
-  },
-  {
-    id: 6,
-    category: "pantai",
-    image: "/images/destinasi6.png",
-    title: "Pantai Kelayang",
-  },
-  {
-    id: 7,
-    category: "island",
-    image: "/images/destinasi7.png",
-    title: "Hopping Adventure",
-  },
-  {
-    id: 8,
-    category: "customer",
-    image: "/images/destinasi1.png",
-    title: "Family Trip",
-  },
-];
+import { galleryItems } from "@/lib/galery";
 
 export default function GaleriSection() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -80,9 +30,6 @@ export default function GaleriSection() {
       {/* Header */}
       <div className="text-center mb-16">
         <div className="flex items-center justify-center gap-3 mb-6">
-          {/* <motion.div animate={{ rotate: [0, 5, -5, 0] }} transition={{ duration: 2, repeat: Infinity }} className="text-4xl">
-            📸
-          </motion.div> */}
           <h2 className="text-4xl md:text-5xl font-bold text-blue-950">Galeri Petualangan</h2>
         </div>
         <p className="text-slate-600 text-lg max-w-3xl mx-auto leading-relaxed">Lihat momen-momen indah yang telah diabadikan dalam setiap perjalanan</p>
@@ -148,7 +95,7 @@ export default function GaleriSection() {
         )}
       </AnimatePresence>
 
-      {/* CTA Button */}
+      {/* View All Button */}
       <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.8 }} className="mt-16 text-center">
         <Button
           size="lg"

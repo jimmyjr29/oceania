@@ -48,9 +48,18 @@ export default function PaketSection() {
                 <div className="relative w-full h-56">
                   <Image src={paket.image} alt={paket.nama} fill className="object-cover group-hover:scale-110 transition-transform duration-700 rounded-t-2xl" />
                   {/* Rating badge */}
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1">
-                    <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    <span className="text-sm font-semibold text-slate-700">{paket.rating}</span>
+                  {/* Bar atas: kategori kiri, rating kanan */}
+                  <div className="absolute top-4 left-0 right-0 flex justify-between items-center px-4">
+                    {/* Tag kategori */}
+                    <div className={`px-3 py-1 rounded-full text-xs font-semibold text-white shadow-sm backdrop-blur-sm ${paket.kategori === "Premium" ? "bg-gradient-to-r from-yellow-500 to-orange-500" : "bg-blue-600/90"}`}>
+                      {paket.kategori}
+                    </div>
+
+                    {/* Rating badge */}
+                    <div className="bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1">
+                      <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      <span className="text-sm font-semibold text-slate-700">{paket.rating}</span>
+                    </div>
                   </div>
                 </div>
 

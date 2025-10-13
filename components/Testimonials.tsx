@@ -5,45 +5,7 @@ import { useState, useEffect } from "react";
 import { Star } from "lucide-react";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
-
-const testimonials = [
-  {
-    name: "Leonel Messi",
-    origin: "Argentina",
-    package: "Paket 3D2N Belitung",
-    rating: 5,
-    comment: "Liburan bersama Oceania benar-benar tak terlupakan!",
-    description: "Semua destinasi sesuai ekspektasi, guide ramah, dan pelayanan sangat profesional. Sangat puas dan pasti akan merekomendasikan kepada teman-teman.",
-    image: "/images/testimoni/messi.jpeg",
-  },
-  {
-    name: "Pevita Pearce",
-    origin: "Jakarta",
-    package: "Paket 2D1N Belitung",
-    rating: 4,
-    comment: "Paketnya worth it banget, terutama Pulau Lengkuas.",
-    description: "Makanannya enak dan jadwal padat tapi seru. Cocok untuk liburan singkat dengan keluarga.",
-    image: "/images/testimoni/pevita.jpeg",
-  },
-  {
-    name: "Cristiano Ronaldo",
-    origin: "Portugal",
-    package: "Private Trip Belitung",
-    rating: 5,
-    comment: "Excellent service from Oceania Travel.",
-    description: "Very professional team, I felt safe and well taken care of during the trip. Highly recommend to anyone visiting Belitung.",
-    image: "/images/testimoni/ronaldo.jpeg",
-  },
-  {
-    name: "Jennifer Bachdim",
-    origin: "Jakarta",
-    package: "Paket 4D3N Belitung",
-    rating: 5,
-    comment: "An amazing experience with Oceania Travel!",
-    description: "The itinerary was perfect, the guides were knowledgeable and friendly, and every detail was taken care of. I can't wait to book my next trip with them.",
-    image: "/images/testimoni/jennifer.jpeg",
-  },
-];
+import { testimonials } from "@/lib/testimoni";
 
 export default function Testimonials() {
   const [index, setIndex] = useState(0);
@@ -65,11 +27,7 @@ export default function Testimonials() {
         <div className="relative w-full overflow-hidden">
           <AnimatePresence mode="wait">
             <motion.div key={index} initial={{ opacity: 0, x: 80 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -80 }} transition={{ duration: 0.5 }}>
-              <Card
-                className="rounded-2xl bg-background border 
-                               shadow-lg shadow-primary/5 
-                               hover:shadow-xl transition-shadow duration-300"
-              >
+              <Card className="rounded-2xl bg-background border shadow-lg shadow-primary/5 hover:shadow-xl transition-shadow duration-300">
                 <CardContent className="flex flex-col gap-6 p-8">
                   {/* Rating */}
                   <div className="flex gap-1">

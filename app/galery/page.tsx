@@ -5,32 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Filter, X, ChevronLeft, ChevronRight, Eye } from "lucide-react";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
-
-const categories = [
-  { id: "all", label: "Semua", icon: "📸" },
-  { id: "pantai", label: "Pantai", icon: "🏖️" },
-  { id: "island", label: "Island Hopping", icon: "🏝️" },
-  { id: "kuliner", label: "Kuliner", icon: "🍽️" },
-  { id: "budaya", label: "Budaya", icon: "🏛️" },
-  { id: "gunung", label: "Gunung", icon: "⛰️" },
-  { id: "customer", label: "Customer Photos", icon: "👥" },
-];
-
-// Sample gallery data with local images from public/images/galery
-const galleryItems = [
-  { id: 1, category: "pantai", image: "/images/galery/pantai-sunset.jpg", title: "Sunset di Tanjung Tinggi" },
-  { id: 2, category: "island", image: "/images/galery/pulau-lengkuas.jpg", title: "Pulau Lengkuas" },
-  { id: 3, category: "kuliner", image: "/images/galery/seafood-fresh.jpg", title: "Seafood Fresh" },
-  { id: 4, category: "budaya", image: "/images/galery/museum-kata.jpg", title: "Museum Kata" },
-  { id: 5, category: "customer", image: "/images/galery/happy-travelers.jpg", title: "Happy Travelers" },
-  { id: 6, category: "pantai", image: "/images/galery/pantai-kelayang.jpg", title: "Pantai Kelayang" },
-  { id: 7, category: "island", image: "/images/galery/hopping-adventure.jpg", title: "Hopping Adventure" },
-  { id: 8, category: "customer", image: "/images/galery/family-trip.jpg", title: "Family Trip" },
-  { id: 9, category: "gunung", image: "/images/galery/gunung-tajam.jpg", title: "Puncak Gunung Tajam" },
-  { id: 10, category: "gunung", image: "/images/galery/gunung-tajam2.jpg", title: "Sunrise di Gunung tajam" },
-  { id: 11, category: "gunung", image: "/images/galery/gunung-begandi.jpg", title: "Pendakian Gunung Begandi" },
-  { id: 12, category: "gunung", image: "/images/galery/batu-baginda.jpg", title: "Pemandangan dari Puncak Batu Baginda" },
-];
+import { galleryItems, galleryCategories, getGalleryItemsByCategory } from "@/lib/galery";
 
 export default function GaleriSection() {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -40,12 +15,7 @@ export default function GaleriSection() {
 
   const handleCategoryChange = (categoryId: string) => {
     setActiveCategory(categoryId);
-
-    if (categoryId === "all") {
-      setFilteredItems(galleryItems);
-    } else {
-      setFilteredItems(galleryItems.filter((item) => item.category === categoryId));
-    }
+    setFilteredItems(getGalleryItemsByCategory(categoryId));
   };
 
   const handlePrev = () => {
@@ -72,7 +42,7 @@ export default function GaleriSection() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header Section */}
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease: "easeOut" }} className="text-center mb-8 mt-10">
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }} className="text-center mb-8 mt-10">
           {/* Title with icon */}
           <div className="flex items-center justify-center gap-3 mb-6">
             <motion.div animate={{ rotate: [0, 5, -5, 0] }} transition={{ duration: 2, repeat: Infinity }} className="text-4xl">
@@ -94,7 +64,7 @@ export default function GaleriSection() {
 
           {/* Category Pills */}
           <div className="flex flex-wrap justify-center gap-3">
-            {categories.map((category, index) => (
+            {galleryCategories.map((category, index) => (
               <motion.button
                 key={category.id}
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -132,7 +102,7 @@ export default function GaleriSection() {
         </motion.div>
 
         {/* Gallery Items */}
-        <motion.div layout className="grid grid-cols-2 md:grid-cols-3 gap-6">
+        <motion.div layout className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {filteredItems.map((item, index) => (
             <motion.div
               key={item.id}
@@ -167,7 +137,7 @@ export default function GaleriSection() {
               <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-between p-4">
                 {/* Category badge - only visible on hover */}
                 <div className="self-start bg-oceania-sunset/90 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full font-medium transform translate-y-[-10px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-75">
-                  {categories.find((cat) => cat.id === item.category)?.label}
+                  {galleryCategories.find((cat) => cat.id === item.category)?.label}
                 </div>
 
                 {/* Center camera icon */}

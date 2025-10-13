@@ -82,13 +82,16 @@ const Footer = () => {
           <span className="text-muted-foreground text-center sm:text-start">&copy; {new Date().getFullYear()} Oceania. All rights reserved.</span>
 
           <div className="flex items-center gap-5 text-muted-foreground">
-            <Link href="https://tiktok.com" target="_blank">
+            <Link href="https://wa.me/6285138534353" target="_blank">
+              <PiWhatsappLogo className="h-5 w-5 hover:text-white transition-colors" />
+            </Link>
+            <Link href="https://www.tiktok.com/@oceania.id" target="_blank">
               <PiTiktokLogo className="h-5 w-5 hover:text-white transition-colors" />
             </Link>
-            <Link href="https://instagram.com" target="_blank">
+            <Link href="https://www.instagram.com/oceania.id/" target="_blank">
               <Instagram className="h-5 w-5 hover:text-white transition-colors" />
             </Link>
-            <Link href="https://netbel.my.id/" target="_blank">
+            <Link href="/" target="_blank">
               <Globe className="h-5 w-5 hover:text-white transition-colors" />
             </Link>
           </div>

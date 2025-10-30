@@ -151,8 +151,13 @@ export default function PaketPage() {
                       {paket.durasi} • {paket.lokasi}
                     </p>
                     <p className="text-slate-600 text-sm mb-2">
-                      Start from <span className="font-bold text-lg text-blue-900">Rp {paket.harga.toLocaleString("id-ID")}/pax</span>
+                      Start from{" "}
+                      <span className="font-bold text-lg text-blue-900">
+                        Rp {paket.harga.toLocaleString("id-ID")}
+                        {paket.tipeHarga === "perPaket" ? "/paket" : "/pax"}
+                      </span>
                     </p>
+
                     <p className="text-slate-600 text-sm mb-4 leading-relaxed">{paket.deskripsiSingkat}</p>
 
                     <div className="flex gap-3">

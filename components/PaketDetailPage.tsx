@@ -75,7 +75,8 @@ export default function PaketDetailPage({ slug }: PaketDetailPageProps) {
                 {/* Harga */}
                 <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
                   <span className="text-lg">
-                    Mulai dari <span className="font-bold text-orange-300">Rp {paket.harga.toLocaleString("id-ID")}</span>/pax
+                    Mulai dari <span className="font-bold text-orange-300">Rp {paket.harga.toLocaleString("id-ID")}</span>
+                    {paket.tipeHarga === "perPax" ? "/pax" : "/paket"}
                   </span>
                 </div>
               </div>
@@ -117,9 +118,8 @@ export default function PaketDetailPage({ slug }: PaketDetailPageProps) {
           {/* Deskripsi Paket */}
           <section>
             <h2 className="text-2xl font-bold mb-2">Deskripsi Paket</h2>
-            <p className="text-slate-600">{paket.deskripsiLengkap}</p>
+            <p className="text-slate-600" dangerouslySetInnerHTML={{ __html: paket.deskripsiLengkap }} />
           </section>
-
           {/* Fasilitas Paket */}
           <section>
             <Card className="p-6 shadow-md space-y-6">
@@ -130,7 +130,7 @@ export default function PaketDetailPage({ slug }: PaketDetailPageProps) {
                   {paket.fasilitasInclude.map((item, idx) => (
                     <div key={idx} className="flex items-center gap-2 text-slate-700">
                       <Check className="w-5 h-5 text-green-500 shrink-0" />
-                      <span>{item}</span>
+                      <span dangerouslySetInnerHTML={{ __html: item }} />
                     </div>
                   ))}
                 </div>
@@ -155,49 +155,128 @@ export default function PaketDetailPage({ slug }: PaketDetailPageProps) {
             <Card className="p-6 shadow-md">
               <h2 className="text-2xl font-bold mb-4">Detail Harga</h2>
 
-              {/* Tabel Harga */}
-              <div className="overflow-hidden rounded-xl border border-slate-200 shadow-sm">
-                <table className="w-full">
-                  <thead>
-                    <tr className="bg-gradient-to-r from-oceania-sunset to-orange-600">
-                      <th className="px-6 py-4 text-center text-blue-950 font-bold text-base">Jumlah Peserta</th>
-                      <th className="px-6 py-4 text-center text-blue-950 font-bold text-base">Harga per Orang</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {paket.detailHarga.tabel.map((item, idx) => (
-                      <tr
-                        key={idx}
-                        className={`
-                ${idx % 2 === 0 ? "bg-white" : "bg-slate-50"}
-                hover:bg-blue-50 transition-colors duration-200
-                ${idx === paket.detailHarga.tabel.length - 1 ? "" : "border-b border-slate-200"}
-              `}
-                      >
-                        <td className="text-center px-6 py-4 text-slate-700 font-medium">{item.jumlahPeserta} orang</td>
-                        <td className="px-6 py-4 text-center">
-                          <span className="text-lg font-bold text-blue-950">Rp {item.harga.toLocaleString("id-ID")}</span>
-                          <span className="text-sm text-slate-500 ml-1">/pax</span>
-                        </td>
+              {/* Layout: Tabel Hotel */}
+              {paket.detailHarga.layoutType === "tabel-hotel" && paket.detailHarga.tabelHotel && (
+                <div className="overflow-hidden rounded-xl border border-slate-200 shadow-sm">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="bg-gradient-to-r from-oceania-sunset to-orange-600">
+                        <th className="px-6 py-4 text-left text-blue-950 font-bold text-base">HOTEL PILIHAN</th>
+                        <th className="px-6 py-4 text-center text-blue-950 font-bold text-base">PESERTA</th>
+                        <th className="px-6 py-4 text-center text-blue-950 font-bold text-base">HARGA</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+                    </thead>
+                    <tbody>
+                      {paket.detailHarga.tabelHotel?.map((item, idx) => (
+                        <tr
+                          key={idx}
+                          className={`
+                  ${idx % 2 === 0 ? "bg-white" : "bg-slate-50"}
+                  hover:bg-blue-50 transition-colors duration-200
+                  ${idx === (paket.detailHarga.tabelHotel?.length ?? 0) - 1 ? "" : "border-b border-slate-200"}
+                `}
+                        >
+                          <td className="px-6 py-4 text-slate-700 font-bold">{item.hotel}</td>
+                          <td className="text-center px-6 py-4 text-slate-700 font-medium">{item.peserta}</td>
+                          <td className="px-6 py-4 text-center">
+                            <span className="text-lg font-bold text-blue-950">Rp {item.harga.toLocaleString("id-ID")}</span>
+                            <span className="text-sm text-slate-500 ml-1">/paket</span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
 
-              {/* Keterangan */}
-              <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-100">
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  <span className="font-semibold text-blue-950">💡 Catatan: </span>
-                  {paket.detailHarga.keterangan}
-                </p>
-              </div>
+              {/* Layout: Tabel Hotel Multiple */}
+              {paket.detailHarga.layoutType === "tabel-hotel-multiple" && paket.detailHarga.tabelHotelMultiple && (
+                <div className="overflow-hidden rounded-xl border border-slate-200 shadow-sm">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="bg-gradient-to-r from-oceania-sunset to-orange-600">
+                        <th className="px-6 py-4 text-left text-blue-950 font-bold text-base">HOTEL PILIHAN</th>
+                        <th className="px-6 py-4 text-center text-blue-950 font-bold text-base">PESERTA</th>
+                        <th className="px-6 py-4 text-center text-blue-950 font-bold text-base">HARGA</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {paket.detailHarga.tabelHotelMultiple?.map((hotel, hotelIdx) =>
+                        hotel.opsi?.map((opsi, opsiIdx) => (
+                          <tr
+                            key={`${hotelIdx}-${opsiIdx}`}
+                            className={`
+                    ${hotelIdx % 2 === 0 ? "bg-white" : "bg-slate-50"}
+                    hover:bg-blue-50 transition-colors duration-200 border-b border-slate-200
+                  `}
+                          >
+                            {opsiIdx === 0 && (
+                              <td rowSpan={hotel.opsi?.length ?? 1} className="px-6 py-4 text-slate-700 font-bold align-middle border-r border-slate-200">
+                                {hotel.hotel}
+                              </td>
+                            )}
+                            <td className="text-center px-6 py-4 text-slate-700 font-medium">{opsi.peserta}</td>
+                            <td className="px-6 py-4 text-center">
+                              <span className="text-lg font-bold text-blue-950">Rp {opsi.harga.toLocaleString("id-ID")}</span>
+                              <span className="text-sm text-slate-500 ml-1">/paket</span>
+                            </td>
+                          </tr>
+                        ))
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+              )}
 
-              {/* Info Tambahan */}
-              <div className="mt-4 flex items-start gap-2 text-xs text-slate-500">
-                <Check className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />
-                <p>Semakin banyak peserta, semakin hemat harga per orangnya!</p>
-              </div>
+              {/* Layout: Paket Lengkap */}
+              {paket.detailHarga.layoutType === "tabel-peserta" && paket.detailHarga.tabel && (
+                <div className="overflow-hidden rounded-xl border border-slate-200 shadow-sm mt-4">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="bg-gradient-to-r from-oceania-sunset to-orange-600">
+                        <th className="px-6 py-4 text-center text-blue-950 font-bold text-base">Jumlah Peserta</th>
+                        <th className="px-6 py-4 text-center text-blue-950 font-bold text-base">Harga per Orang</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {paket.detailHarga.tabel.map((item, idx) => (
+                        <tr
+                          key={idx}
+                          className={`
+              ${idx % 2 === 0 ? "bg-white" : "bg-slate-50"}
+              hover:bg-blue-50 transition-colors duration-200
+              ${idx === paket.detailHarga.tabel!.length - 1 ? "" : "border-b border-slate-200"}
+            `}
+                        >
+                          <td className="text-center px-6 py-4 text-slate-700 font-medium">{item.jumlahPeserta} orang</td>
+                          <td className="px-6 py-4 text-center">
+                            <span className="text-lg font-bold text-blue-950">Rp {item.harga.toLocaleString("id-ID")}</span>
+                            <span className="text-sm text-slate-500 ml-1">/pax</span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+
+              {/* Catatan */}
+              {paket.detailHarga.keterangan && (
+                <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-100">
+                  <p className="text-slate-600 text-sm leading-relaxed">
+                    <span className="font-semibold text-blue-950">💡 Catatan: </span>
+                    {paket.detailHarga.keterangan}
+                  </p>
+                </div>
+              )}
+
+              {/* Info tambahan */}
+              {(paket.detailHarga.layoutType === "tabel-paket-lengkap" || paket.detailHarga.layoutType === "tabel-peserta" || !paket.detailHarga.layoutType) && (
+                <div className="mt-4 flex items-start gap-2 text-xs text-slate-500">
+                  <Check className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />
+                  <p>Semakin banyak peserta, semakin hemat harga per orangnya!</p>
+                </div>
+              )}
             </Card>
           </section>
 
@@ -209,10 +288,10 @@ export default function PaketDetailPage({ slug }: PaketDetailPageProps) {
                 {paket.itinerary.map((day, index) => (
                   <div key={index}>
                     <h3 className="text-lg font-semibold mb-2">{day.judul}</h3>
-                    <p className="text-slate-600 mb-2">{day.deskripsi}</p>
+                    <p className="text-slate-600 mb-2" dangerouslySetInnerHTML={{ __html: day.deskripsi }} />
                     <ul className="list-disc pl-5 text-slate-600 text-sm">
                       {day.destinasi.map((dest, i) => (
-                        <li key={i}>{dest}</li>
+                        <li key={i} dangerouslySetInnerHTML={{ __html: dest }} />
                       ))}
                     </ul>
                   </div>
@@ -220,7 +299,6 @@ export default function PaketDetailPage({ slug }: PaketDetailPageProps) {
               </div>
             </Card>
           </section>
-
           {/* Gallery dengan Preview */}
           <section>
             <Card className="p-6 shadow-md">
@@ -242,7 +320,6 @@ export default function PaketDetailPage({ slug }: PaketDetailPageProps) {
               </div>
             </Card>
           </section>
-
           {/* CTA Section */}
           <section>
             <div className="relative overflow-hidden bg-gradient-to-br from-blue-950 via-blue-900 to-blue-950 rounded-3xl shadow-2xl">

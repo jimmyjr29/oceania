@@ -30,64 +30,72 @@ export default function PaketSection() {
 
         {/* Cards */}
         <div className="grid gap-8 md:grid-cols-3">
-          {paketList.slice(0, 3).map((paket: Paket, index: number) => (
-            <motion.div
-              key={paket.id}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.2,
-              }}
-              whileHover={{ scale: 1.03, y: -5 }}
-              className="group"
-            >
-              <Card className="overflow-hidden shadow-xl hover:shadow-2xl rounded-2xl p-0 border-0 bg-white/80 backdrop-blur-sm transition-all duration-300 hover:bg-white/90">
-                {/* Gambar */}
-                <div className="relative w-full h-56">
-                  <Image src={paket.image} alt={paket.nama} fill className="object-cover group-hover:scale-110 transition-transform duration-700 rounded-t-2xl" />
-                  {/* Rating badge */}
-                  {/* Bar atas: kategori kiri, rating kanan */}
-                  <div className="absolute top-4 left-0 right-0 flex justify-between items-center px-4">
-                    {/* Tag kategori */}
-                    <div className={`px-3 py-1 rounded-full text-xs font-semibold text-white shadow-sm backdrop-blur-sm ${paket.kategori === "Premium" ? "bg-gradient-to-r from-yellow-500 to-orange-500" : "bg-blue-600/90"}`}>
-                      {paket.kategori}
-                    </div>
-
+          {/* {paketList.slice(0, 3).map((paket: Paket, index: number) => ( */}
+          {paketList
+            .filter((item) => ["3", "5", "7"].includes(String(item.id)))
+            .map((paket: Paket, index: number) => (
+              <motion.div
+                key={paket.id}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.2,
+                }}
+                whileHover={{ scale: 1.03, y: -5 }}
+                className="group"
+              >
+                <Card className="overflow-hidden shadow-xl hover:shadow-2xl rounded-2xl p-0 border-0 bg-white/80 backdrop-blur-sm transition-all duration-300 hover:bg-white/90">
+                  {/* Gambar */}
+                  <div className="relative w-full h-56">
+                    <Image src={paket.image} alt={paket.nama} fill className="object-cover group-hover:scale-110 transition-transform duration-700 rounded-t-2xl" />
                     {/* Rating badge */}
-                    <div className="bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1">
-                      <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                      <span className="text-sm font-semibold text-slate-700">{paket.rating}</span>
+                    {/* Bar atas: kategori kiri, rating kanan */}
+                    <div className="absolute top-4 left-0 right-0 flex justify-between items-center px-4">
+                      {/* Tag kategori */}
+                      <div className={`px-3 py-1 rounded-full text-xs font-semibold text-white shadow-sm backdrop-blur-sm ${paket.kategori === "Premium" ? "bg-gradient-to-r from-yellow-500 to-orange-500" : "bg-blue-600/90"}`}>
+                        {paket.kategori}
+                      </div>
+
+                      {/* Rating badge */}
+                      <div className="bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1">
+                        <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                        <span className="text-sm font-semibold text-slate-700">{paket.rating}</span>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Konten */}
-                <div className="p-6 text-left">
-                  <h3 className="text-xl font-bold text-oceania-navy mb-1">{paket.nama}</h3>
-                  <p className="text-slate-500 text-sm mb-1">
-                    {paket.durasi} • {paket.lokasi}
-                  </p>
-                  <p className="text-slate-600 text-sm mb-2">
-                    Start from <span className="font-bold text-lg text-blue-900">Rp {paket.harga.toLocaleString("id-ID")}/pax</span>
-                  </p>
-                  <p className="text-slate-600 text-sm mb-4 leading-relaxed">{paket.deskripsiSingkat}</p>
+                  {/* Konten */}
+                  <div className="p-6 text-left">
+                    <h3 className="text-xl font-bold text-oceania-navy mb-1">{paket.nama}</h3>
+                    <p className="text-slate-500 text-sm mb-1">
+                      {paket.durasi} • {paket.lokasi}
+                    </p>
+                    <p className="text-slate-600 text-sm mb-2">
+                      Start from{" "}
+                      <span className="font-bold text-lg text-blue-900">
+                        Rp {paket.harga.toLocaleString("id-ID")}
+                        {paket.tipeHarga === "perPaket" ? "/paket" : "/pax"}
+                      </span>
+                    </p>
 
-                  <div className="flex gap-3">
-                    <Link href={`/paket/${paket.slug}`} className="flex-1">
-                      <Button variant="outline" className="rounded-2xl font-medium w-full">
-                        Detail →
-                      </Button>
-                    </Link>
-                    <a href={`https://wa.me/6285138534353?text=Halo, saya mau booking paket ${paket.nama}`} target="_blank" rel="noopener noreferrer" className="flex-1">
-                      <Button className="bg-gradient-to-r from-oceania-navy to-blue-900 text-white font-bold rounded-2xl w-full">Pesan Sekarang</Button>
-                    </a>
+                    <p className="text-slate-600 text-sm mb-4 leading-relaxed">{paket.deskripsiSingkat}</p>
+
+                    <div className="flex gap-3">
+                      <Link href={`/paket/${paket.slug}`} className="flex-1">
+                        <Button variant="outline" className="rounded-2xl font-medium w-full">
+                          Detail →
+                        </Button>
+                      </Link>
+                      <a href={`https://wa.me/6285138534353?text=Halo, saya mau booking paket ${paket.nama}`} target="_blank" rel="noopener noreferrer" className="flex-1">
+                        <Button className="bg-gradient-to-r from-oceania-navy to-blue-900 text-white font-bold rounded-2xl w-full">Pesan Sekarang</Button>
+                      </a>
+                    </div>
                   </div>
-                </div>
-              </Card>
-            </motion.div>
-          ))}
+                </Card>
+              </motion.div>
+            ))}
         </div>
 
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.8 }} className="mt-16">

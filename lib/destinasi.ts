@@ -49,7 +49,14 @@ export const destinasiData: Destinasi[] = [
     deskripsi: "Pulau unik dengan batu granit raksasa berbentuk kepala burung.",
     detail:
       "Pulau Burung terkenal dengan formasi granit raksasa yang menyerupai kepala burung garuda, menjadikannya landmark alam yang menakjubkan. Dengan pantai berpasir putih dan air laut jernih, tempat ini ideal untuk bersantai, berfoto, dan merasakan keindahan khas Belitung.",
-    footage: ["/images/destinasi/Batu-burung.png"],
+    footage: [
+      "/images/destinasi/Batu-burung.png",
+      "/images/destinasi/batu-burung/batu-burung1.jpg",
+      "/images/destinasi/batu-burung/batu-burung2.jpg",
+      "/images/destinasi/batu-burung/batu-burung3.jpg",
+      "/images/destinasi/batu-burung/batu-burung4.jpg",
+      "/images/destinasi/batu-burung/batu-burung5.jpg",
+    ],
   },
   {
     id: 3,
@@ -104,7 +111,14 @@ export const destinasiData: Destinasi[] = [
     deskripsi: "Pulau kecil tersembunyi dengan pantai tenang dan pasir putih.",
     detail:
       "Tukong Kik Mai adalah destinasi tersembunyi yang menawarkan ketenangan dengan pantai berpasir putih dan air laut yang jernih. Pulau ini cocok bagi wisatawan yang mencari suasana privat dan damai, jauh dari keramaian, untuk menikmati keindahan alami Belitung secara lebih intim.",
-    footage: ["/images/destinasi/KIK-mai.png"],
+    footage: [
+      "/images/destinasi/KIK-mai.png",
+      "/images/destinasi/kikmai/kikmai1.jpg",
+      "/images/destinasi/kikmai/kikmai2.jpg",
+      "/images/destinasi/kikmai/kikmai3.jpg",
+      "/images/destinasi/kikmai/kikmai4.jpg",
+      "/images/destinasi/kikmai/kikmai5.jpg",
+    ],
   },
   {
     id: 6,
@@ -168,6 +182,32 @@ export const destinasiData: Destinasi[] = [
       "/images/destinasi/laskar-pelangi/laskar-pelangi14.jpg",
       "/images/destinasi/laskar-pelangi/laskar-pelangi15.jpg",
       "/images/destinasi/laskar-pelangi/laskar-pelangi16.jpg",
+    ],
+  },
+  {
+    id: 9,
+    slug: "vihara-dewi-kwan-im",
+    nama: "Vihara Dewi Kwan Im",
+    lokasi: "Belitung Timur",
+    rating: 4.8,
+    kategori: "Wisata Religi",
+    gambar: "/images/destinasi/vihara.png",
+    deskripsi: "Vihara tertua di Belitung yang menjadi tempat ibadah dan wisata spiritual.",
+    detail:
+      "Vihara Dewi Kwan Im, juga dikenal sebagai Vihara Buddhayana atau Vihara Dewi Kwan Im Manggar, merupakan salah satu tempat suci tertua dan terbesar di Pulau Belitung. Berdiri di atas perbukitan dengan panorama laut yang memukau, vihara ini menjadi simbol toleransi, kedamaian, dan spiritualitas. Patung Dewi Kwan Im yang menjulang tinggi menjadi daya tarik utama, melambangkan kasih sayang dan kebijaksanaan. Pengunjung dapat bersembahyang, menikmati pemandangan, sekaligus merasakan ketenangan batin di tengah keindahan alam.",
+    footage: [
+      "/images/destinasi/vihara.png",
+      "/images/destinasi/vihara/vihara2.jpg",
+      "/images/destinasi/vihara/vihara3.jpg",
+      "/images/destinasi/vihara/vihara4.jpg",
+      "/images/destinasi/vihara/vihara5.jpg",
+      "/images/destinasi/vihara/vihara6.jpg",
+      "/images/destinasi/vihara/vihara7.jpg",
+      "/images/destinasi/vihara/vihara9.jpg",
+      "/images/destinasi/vihara/vihara10.jpg",
+      "/images/destinasi/vihara/vihara11.jpg",
+      "/images/destinasi/vihara/vihara12.jpg",
+      "/images/destinasi/vihara/vihara13.jpg",
     ],
   },
 ];

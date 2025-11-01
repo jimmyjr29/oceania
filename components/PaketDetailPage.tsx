@@ -158,12 +158,12 @@ export default function PaketDetailPage({ slug }: PaketDetailPageProps) {
               {/* Layout: Tabel Hotel */}
               {paket.detailHarga.layoutType === "tabel-hotel" && paket.detailHarga.tabelHotel && (
                 <div className="overflow-hidden rounded-xl border border-slate-200 shadow-sm">
-                  <table className="w-full">
+                  <table className="w-full table-fixed">
                     <thead>
                       <tr className="bg-gradient-to-r from-oceania-sunset to-orange-600">
-                        <th className="px-6 py-4 text-left text-blue-950 font-bold text-base">HOTEL PILIHAN</th>
-                        <th className="px-6 py-4 text-center text-blue-950 font-bold text-base">PESERTA</th>
-                        <th className="px-6 py-4 text-center text-blue-950 font-bold text-base">HARGA</th>
+                        <th className="w-[40%] px-2 sm:px-6 py-3 sm:py-4 text-left text-blue-950 font-bold text-[10px] sm:text-base">HOTEL PILIHAN</th>
+                        <th className="w-[25%] px-2 sm:px-6 py-3 sm:py-4 text-center text-blue-950 font-bold text-[10px] sm:text-base">PESERTA</th>
+                        <th className="w-[35%] px-2 sm:px-6 py-3 sm:py-4 text-center text-blue-950 font-bold text-[10px] sm:text-base">HARGA</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -171,16 +171,18 @@ export default function PaketDetailPage({ slug }: PaketDetailPageProps) {
                         <tr
                           key={idx}
                           className={`
-                  ${idx % 2 === 0 ? "bg-white" : "bg-slate-50"}
-                  hover:bg-blue-50 transition-colors duration-200
-                  ${idx === (paket.detailHarga.tabelHotel?.length ?? 0) - 1 ? "" : "border-b border-slate-200"}
-                `}
+                            ${idx % 2 === 0 ? "bg-white" : "bg-slate-50"}
+                            hover:bg-blue-50 transition-colors duration-200
+                            ${idx === (paket.detailHarga.tabelHotel?.length ?? 0) - 1 ? "" : "border-b border-slate-200"}
+                          `}
                         >
-                          <td className="px-6 py-4 text-slate-700 font-bold">{item.hotel}</td>
-                          <td className="text-center px-6 py-4 text-slate-700 font-medium">{item.peserta}</td>
-                          <td className="px-6 py-4 text-center">
-                            <span className="text-lg font-bold text-blue-950">Rp {item.harga.toLocaleString("id-ID")}</span>
-                            <span className="text-sm text-slate-500 ml-1">/paket</span>
+                          <td className="px-2 sm:px-6 py-3 sm:py-4 text-slate-700 font-bold text-[10px] sm:text-base leading-tight">{item.hotel}</td>
+                          <td className="text-center px-2 sm:px-6 py-3 sm:py-4 text-slate-700 font-medium text-[10px] sm:text-base">{item.peserta}</td>
+                          <td className="px-2 sm:px-6 py-3 sm:py-4 text-center">
+                            <div className="flex flex-col items-center">
+                              <span className="text-xs sm:text-lg font-bold text-blue-950 whitespace-nowrap">Rp {item.harga.toLocaleString("id-ID")}</span>
+                              <span className="text-[9px] sm:text-sm text-slate-500">/paket</span>
+                            </div>
                           </td>
                         </tr>
                       ))}
@@ -192,12 +194,12 @@ export default function PaketDetailPage({ slug }: PaketDetailPageProps) {
               {/* Layout: Tabel Hotel Multiple */}
               {paket.detailHarga.layoutType === "tabel-hotel-multiple" && paket.detailHarga.tabelHotelMultiple && (
                 <div className="overflow-hidden rounded-xl border border-slate-200 shadow-sm">
-                  <table className="w-full">
+                  <table className="w-full table-fixed">
                     <thead>
                       <tr className="bg-gradient-to-r from-oceania-sunset to-orange-600">
-                        <th className="px-6 py-4 text-left text-blue-950 font-bold text-base">HOTEL PILIHAN</th>
-                        <th className="px-6 py-4 text-center text-blue-950 font-bold text-base">PESERTA</th>
-                        <th className="px-6 py-4 text-center text-blue-950 font-bold text-base">HARGA</th>
+                        <th className="w-[40%] px-2 sm:px-6 py-3 sm:py-4 text-left text-blue-950 font-bold text-[10px] sm:text-base">HOTEL PILIHAN</th>
+                        <th className="w-[25%] px-2 sm:px-6 py-3 sm:py-4 text-center text-blue-950 font-bold text-[10px] sm:text-base">PESERTA</th>
+                        <th className="w-[35%] px-2 sm:px-6 py-3 sm:py-4 text-center text-blue-950 font-bold text-[10px] sm:text-base">HARGA</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -206,19 +208,21 @@ export default function PaketDetailPage({ slug }: PaketDetailPageProps) {
                           <tr
                             key={`${hotelIdx}-${opsiIdx}`}
                             className={`
-                    ${hotelIdx % 2 === 0 ? "bg-white" : "bg-slate-50"}
-                    hover:bg-blue-50 transition-colors duration-200 border-b border-slate-200
-                  `}
+                              ${hotelIdx % 2 === 0 ? "bg-white" : "bg-slate-50"}
+                              hover:bg-blue-50 transition-colors duration-200 border-b border-slate-200
+                            `}
                           >
                             {opsiIdx === 0 && (
-                              <td rowSpan={hotel.opsi?.length ?? 1} className="px-6 py-4 text-slate-700 font-bold align-middle border-r border-slate-200">
+                              <td rowSpan={hotel.opsi?.length ?? 1} className="px-2 sm:px-6 py-3 sm:py-4 text-slate-700 font-bold align-middle border-r border-slate-200 text-[10px] sm:text-base leading-tight">
                                 {hotel.hotel}
                               </td>
                             )}
-                            <td className="text-center px-6 py-4 text-slate-700 font-medium">{opsi.peserta}</td>
-                            <td className="px-6 py-4 text-center">
-                              <span className="text-lg font-bold text-blue-950">Rp {opsi.harga.toLocaleString("id-ID")}</span>
-                              <span className="text-sm text-slate-500 ml-1">/paket</span>
+                            <td className="text-center px-2 sm:px-6 py-3 sm:py-4 text-slate-700 font-medium text-[10px] sm:text-base">{opsi.peserta}</td>
+                            <td className="px-2 sm:px-6 py-3 sm:py-4 text-center">
+                              <div className="flex flex-col items-center">
+                                <span className="text-xs sm:text-lg font-bold text-blue-950 whitespace-nowrap">Rp {opsi.harga.toLocaleString("id-ID")}</span>
+                                <span className="text-[9px] sm:text-sm text-slate-500">/paket</span>
+                              </div>
                             </td>
                           </tr>
                         ))
@@ -231,11 +235,11 @@ export default function PaketDetailPage({ slug }: PaketDetailPageProps) {
               {/* Layout: Paket Lengkap */}
               {paket.detailHarga.layoutType === "tabel-peserta" && paket.detailHarga.tabel && (
                 <div className="overflow-hidden rounded-xl border border-slate-200 shadow-sm mt-4">
-                  <table className="w-full">
+                  <table className="w-full table-fixed">
                     <thead>
                       <tr className="bg-gradient-to-r from-oceania-sunset to-orange-600">
-                        <th className="px-6 py-4 text-center text-blue-950 font-bold text-base">Jumlah Peserta</th>
-                        <th className="px-6 py-4 text-center text-blue-950 font-bold text-base">Harga per Orang</th>
+                        <th className="w-[45%] px-2 sm:px-6 py-3 sm:py-4 text-center text-blue-950 font-bold text-[10px] sm:text-base">Jumlah Peserta</th>
+                        <th className="w-[55%] px-2 sm:px-6 py-3 sm:py-4 text-center text-blue-950 font-bold text-[10px] sm:text-base">Harga per Orang</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -243,15 +247,19 @@ export default function PaketDetailPage({ slug }: PaketDetailPageProps) {
                         <tr
                           key={idx}
                           className={`
-              ${idx % 2 === 0 ? "bg-white" : "bg-slate-50"}
-              hover:bg-blue-50 transition-colors duration-200
-              ${idx === paket.detailHarga.tabel!.length - 1 ? "" : "border-b border-slate-200"}
-            `}
+                            ${idx % 2 === 0 ? "bg-white" : "bg-slate-50"}
+                            hover:bg-blue-50 transition-colors duration-200
+                            ${idx === paket.detailHarga.tabel!.length - 1 ? "" : "border-b border-slate-200"}
+                          `}
                         >
-                          <td className="text-center px-6 py-4 text-slate-700 font-medium">{item.jumlahPeserta} orang</td>
-                          <td className="px-6 py-4 text-center">
-                            <span className="text-lg font-bold text-blue-950">Rp {item.harga.toLocaleString("id-ID")}</span>
-                            <span className="text-sm text-slate-500 ml-1">/pax</span>
+                          <td className="text-center px-2 sm:px-6 py-3 sm:py-4 text-slate-700 font-medium text-[10px] sm:text-base">{item.jumlahPeserta} orang</td>
+                          <td className="px-2 sm:px-6 py-3 sm:py-4 text-center">
+                            <div className="flex flex-col items-center">
+                              <span className="text-xs sm:text-lg font-bold text-blue-950 whitespace-nowrap">
+                                Rp {item.harga.toLocaleString("id-ID")}
+                                <span className="text-[9px] sm:text-sm text-slate-500">/pax</span>
+                              </span>
+                            </div>
                           </td>
                         </tr>
                       ))}

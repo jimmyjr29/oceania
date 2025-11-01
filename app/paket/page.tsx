@@ -63,22 +63,28 @@ export default function PaketPage() {
             </div>
 
             {/* Filter Kategori */}
-            <div className="flex gap-2 w-full md:w-auto">
+            <div className="flex gap-2 w-full overflow-x-auto no-scrollbar md:overflow-visible md:w-auto">
               <button
                 onClick={() => setSelectedKategori("Semua")}
-                className={`px-6 py-3 rounded-xl font-semibold transition-all ${selectedKategori === "Semua" ? "bg-gradient-to-r from-blue-950 to-blue-900 text-white shadow-md" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}
+                className={`flex-shrink-0 px-4 py-2 md:px-6 md:py-3 rounded-lg md:rounded-xl font-semibold text-sm md:text-base transition-all ${
+                  selectedKategori === "Semua" ? "bg-gradient-to-r from-blue-950 to-blue-900 text-white shadow-md" : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                }`}
               >
                 Semua
               </button>
               <button
                 onClick={() => setSelectedKategori("Premium")}
-                className={`px-6 py-3 rounded-xl font-semibold transition-all ${selectedKategori === "Premium" ? "bg-gradient-to-r from-yellow-500 to-orange-500 text-white shadow-md" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}
+                className={`flex-shrink-0 px-4 py-2 md:px-6 md:py-3 rounded-lg md:rounded-xl font-semibold text-sm md:text-base transition-all ${
+                  selectedKategori === "Premium" ? "bg-gradient-to-r from-yellow-500 to-orange-500 text-white shadow-md" : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                }`}
               >
                 Premium
               </button>
               <button
                 onClick={() => setSelectedKategori("Reguler")}
-                className={`px-6 py-3 rounded-xl font-semibold transition-all ${selectedKategori === "Reguler" ? "bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-md" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}
+                className={`flex-shrink-0 px-4 py-2 md:px-6 md:py-3 rounded-lg md:rounded-xl font-semibold text-sm md:text-base transition-all ${
+                  selectedKategori === "Reguler" ? "bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-md" : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                }`}
               >
                 Reguler
               </button>
@@ -157,7 +163,6 @@ export default function PaketPage() {
                         {paket.tipeHarga === "perPaket" ? "/paket" : "/pax"}
                       </span>
                     </p>
-
                     <p className="text-slate-600 text-sm mb-4 leading-relaxed">{paket.deskripsiSingkat}</p>
 
                     <div className="flex gap-3">

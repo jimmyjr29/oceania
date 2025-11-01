@@ -5,11 +5,11 @@ import { motion } from "framer-motion";
 const faqs = [
   {
     question: "Bagaimana cara memesan paket wisata di Oceania Travel?",
-    answer: "Anda bisa memesan langsung melalui website dengan memilih paket yang tersedia, atau menghubungi tim kami via WhatsApp untuk custom trip sesuai kebutuhan.",
+    answer: "Anda bisa memilih paket wisata melalui website dengan memilih paket yang tersedia kemudian klik tombol (Pesan sekarang), atau menghubungi tim kami via WhatsApp untuk custom trip sesuai kebutuhan.",
   },
   {
     question: "Apa saja metode pembayaran yang tersedia?",
-    answer: "Kami menerima pembayaran melalui transfer bank, e-wallet populer (OVO, Dana, GoPay), dan juga pembayaran tunai saat bertemu di lokasi (cash on delivery).",
+    answer: "Kami menerima pembayaran melalui transfer bank (BCA, BNI, Hana Bank), dan juga menggunakan e-wallet populer (OVO, Dana, GoPay)",
   },
   {
     question: "Apakah harga sudah termasuk transportasi dan makan?",

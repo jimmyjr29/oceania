@@ -19,11 +19,11 @@ export default function AboutUs() {
           <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
             <h3 className="text-blue-950 text-2xl font-semibold mb-4">Cerita Kami</h3>
             <p className="text-slate-600 leading-relaxed mb-4 text-justify">
-              OCEANIA Travel Agency didirikan pada tahun 2018 dengan visi menjadi partner terpercaya untuk setiap perjalanan wisata Anda. Berawal dari kecintaan terhadap keindahan Indonesia, kami berkomitmen menghadirkan pengalaman
-              perjalanan yang tak terlupakan.
+              OCEANIA Travel Agency lahir pada tahun 2025 dengan semangat menghadirkan pengalaman perjalanan yang autentik dan berkesan. Terinspirasi oleh keindahan alam dan budaya Indonesia, kami berkomitmen menjadi partner terpercaya bagi
+              setiap petualangan Anda.
             </p>
             <p className="text-slate-600 leading-relaxed text-justify">
-              Dengan tim yang berpengalaman lebih dari 5 tahun di industri pariwisata, kami telah melayani ribuan pelanggan dengan tingkat kepuasan 98%. Setiap perjalanan dirancang khusus untuk memberikan nilai terbaik dan kenangan indah.
+              Meski merupakan agensi yang baru berdiri, tim kami terdiri dari para profesional berpengalaman di dunia pariwisata. Kami percaya bahwa setiap perjalanan bukan sekadar liburan, tetapi juga cerita yang layak untuk dikenang.
             </p>
           </motion.div>
 
@@ -31,12 +31,7 @@ export default function AboutUs() {
           <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }} viewport={{ once: true }} className="flex justify-center">
             <div className="rounded-full bg-gradient-to-tr from-orange-400 to-blue-900 p-1">
               <div className="rounded-full bg-orange-50 p-10 md:p-16">
-                <Image
-                  src="/brand.png" // ganti dengan ilustrasi kamu
-                  alt="Ilustrasi Oceania Travel"
-                  width={160}
-                  height={160}
-                />
+                <Image src="/brand.png" alt="Logo Oceania Travel" width={160} height={160} />
               </div>
             </div>
           </motion.div>

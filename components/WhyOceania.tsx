@@ -38,7 +38,6 @@ const reasons = [
   },
 ];
 
-// Variants animasi grid dan item
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   show: {

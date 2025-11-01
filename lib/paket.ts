@@ -139,14 +139,7 @@ export const paketList: Paket[] = [
       ],
       keterangan: "Harga per pax sudah termasuk semua fasilitas yang tercantum pada daftar include. Harga dapat berubah sewaktu-waktu tergantung musim dan ketersediaan kapal.",
     },
-    galeri: [
-      "/images/paket/thumbnail/hooping-island.png",
-      "/images/galery/pulau-lengkuas.jpg",
-      "/images/galery/pulau-batu-garuda.jpg",
-      "/images/galery/pulau-pasir.jpg",
-      "/images/galery/goa-kelayang.jpg",
-      "/images/galery/pantai-tanjung-pendam.jpg",
-    ],
+    galeri: ["/images/paket/thumbnail/hooping-island.png", "/images/galery/pulau-lengkuas.jpg"],
     itinerary: [
       {
         hari: 1,
@@ -195,7 +188,7 @@ export const paketList: Paket[] = [
       "Lunch seafood khas Belitung (<b>Pulau Kelayang</b>)",
       "Air mineral selama perjalanan",
       "<b>Cinematic video</b> highlight perjalanan",
-      "Dokumentasi (<b>Go-Pro, mirrorless & iphone</b>)",
+      "Dokumentasi (<b>Go-Pro & iphone</b>)",
     ],
     fasilitasExclude: ["Dokumentasi (Drone)", "Transportasi menuju Dermaga Tanjung Kelayang", "Tiket pesawat atau akomodasi hotel", "Pengeluaran pribadi", "Asuransi perjalanan", "Tips untuk guide dan crew"],
     detailHarga: {
@@ -212,14 +205,7 @@ export const paketList: Paket[] = [
       ],
       keterangan: "Harga per pax sudah termasuk fasilitas dalam daftar include. Perjalanan menggunakan kapal sharing, dan jadwal dapat berubah sesuai kondisi cuaca.",
     },
-    galeri: [
-      "/images/paket/thumbnail/hooping-island.png",
-      "/images/galery/pulau-lengkuas.jpg",
-      "/images/galery/pulau-batu-berlayar.jpg",
-      "/images/galery/pulau-batu-garuda.jpg",
-      "/images/galery/pulau-pasir.jpg",
-      "/images/galery/goa-kelayang.jpg",
-    ],
+    galeri: ["/images/paket/thumbnail/hooping-island.png", "/images/galery/pulau-lengkuas.jpg"],
     itinerary: [
       {
         hari: 1,
@@ -262,7 +248,7 @@ export const paketList: Paket[] = [
       "Pelampung & alat snorkeling",
       "Tour Guide lokal berpengalaman",
       "Lunch seafood khas Belitung (<b>Pulau Kelayang</b>)",
-      "Makan malam di restoran lokal",
+      "1x Makan malam di restoran lokal",
       "Air mineral selama perjalanan",
       "<b>Snack Box</b> untuk perjalanan",
       "Tiket masuk objek wisata",
@@ -290,16 +276,7 @@ export const paketList: Paket[] = [
       keterangan: "Harga per pax sudah termasuk semua fasilitas pada daftar include. Harga dapat berubah sewaktu-waktu tergantung musim, ketersediaan hotel, dan kondisi cuaca.",
     },
 
-    galeri: [
-      "/images/paket/thumbnail/paket-2D1N.png",
-      "/images/galery/pulau-lengkuas.jpg",
-      "/images/galery/pulau-batu-garuda.jpg",
-      "/images/galery/pulau-pasir.jpg",
-      "/images/galery/goa-kelayang.jpg",
-      "/images/galery/pantai-tanjung-tinggi.jpg",
-      "/images/galery/danau-kaolin.jpg",
-      "/images/galery/kongdjie-coffee.jpg",
-    ],
+    galeri: ["/images/paket/thumbnail/paket-2D1N.png", "/images/galery/pulau-lengkuas.jpg"],
 
     itinerary: [
       {
@@ -394,16 +371,7 @@ export const paketList: Paket[] = [
       keterangan: "Harga per pax sudah termasuk semua fasilitas pada daftar include. Harga dapat berubah sewaktu-waktu tergantung musim, ketersediaan hotel, dan kondisi cuaca.",
     },
 
-    galeri: [
-      "/images/paket/thumbnail/paket-3D2N.png",
-      "/images/galery/sd-laskar-pelangi.jpg",
-      "/images/galery/museum-kata-andrea.jpg",
-      "/images/galery/pantai-burung-mandi.jpg",
-      "/images/galery/pulau-lengkuas.jpg",
-      "/images/galery/pulau-batu-garuda.jpg",
-      "/images/galery/danau-kaolin.jpg",
-      "/images/galery/kongdjie-coffee.jpg",
-    ],
+    galeri: ["/images/paket/thumbnail/paket-3D2N.png", "/images/galery/sd-laskar-pelangi.jpg"],
 
     itinerary: [
       {
@@ -495,28 +463,18 @@ export const paketList: Paket[] = [
     detailHarga: {
       layoutType: "tabel-hotel",
       tabelHotel: [
-        { hotel: "MARIOT ⭐⭐⭐⭐✩", peserta: "2", harga: 4509700 },
-        { hotel: "Swiss-Bel ⭐⭐⭐⭐✩", peserta: "2", harga: 4444700 },
+        { hotel: "Fairfield By Marriott Belitung ⭐⭐⭐⭐✩", peserta: "2", harga: 4509700 },
+        { hotel: "Swiss-Belresort Belitung ⭐⭐⭐⭐✩", peserta: "2", harga: 4444700 },
         { hotel: "BW SUITE ⭐⭐⭐⭐", peserta: "2", harga: 4379700 },
         { hotel: "GRAND HATIKA ⭐⭐⭐⭐", peserta: "2", harga: 4119700 },
         { hotel: "BW INN ⭐⭐⭐", peserta: "2", harga: 4054700 },
-        { hotel: "LA LUCIA ⭐⭐⭐", peserta: "2", harga: 3989700 },
+        { hotel: "La Lucia Boutique ⭐⭐⭐", peserta: "2", harga: 3989700 },
         { hotel: "DEMOUNT ⭐⭐", peserta: "2", harga: 3794700 },
       ],
       keterangan: "Harga sudah termasuk akomodasi hotel sesuai pilihan. Harga dapat berubah tergantung season dan ketersediaan.",
     },
 
-    galeri: [
-      "/images/paket/thumbnail/hooneymoon.png",
-      "/images/galery/honeymoon-boat.jpg",
-      "/images/galery/pulau-lengkuas.jpg",
-      "/images/galery/pulau-batu-berlayar.jpg",
-      "/images/galery/pulau-pasir.jpg",
-      "/images/galery/pulau-kelayang.jpg",
-      "/images/galery/pantai-tanjung-tinggi.jpg",
-      "/images/galery/candlelight-dinner.jpg",
-      "/images/galery/danau-kaolin.jpg",
-    ],
+    galeri: ["/images/paket/thumbnail/hooneymoon.png"],
     itinerary: [
       {
         hari: 1,
@@ -596,29 +554,17 @@ export const paketList: Paket[] = [
     detailHarga: {
       layoutType: "tabel-hotel",
       tabelHotel: [
-        { hotel: "MARIOT ⭐⭐⭐⭐✩", peserta: "2", harga: 6670300 },
-        { hotel: "Swiss-Bel ⭐⭐⭐⭐✩", peserta: "2", harga: 6540300 },
+        { hotel: "Fairfield By Marriott Belitung ⭐⭐⭐⭐✩", peserta: "2", harga: 6670300 },
+        { hotel: "Swiss-Belresort Belitung ⭐⭐⭐⭐✩", peserta: "2", harga: 6540300 },
         { hotel: "BW SUITE ⭐⭐⭐⭐", peserta: "2", harga: 6410300 },
         { hotel: "GRAND HATIKA ⭐⭐⭐⭐", peserta: "2", harga: 5890300 },
         { hotel: "BW INN ⭐⭐⭐", peserta: "2", harga: 5760300 },
-        { hotel: "LA LUCIA ⭐⭐⭐", peserta: "2", harga: 5630300 },
+        { hotel: "La Lucia Boutique ⭐⭐⭐", peserta: "2", harga: 5630300 },
         { hotel: "DEMOUNT ⭐⭐", peserta: "2", harga: 5240300 },
       ],
       keterangan: "Harga sudah termasuk akomodasi hotel sesuai pilihan. Harga dapat berubah tergantung season dan ketersediaan.",
     },
-    galeri: [
-      "/images/paket/thumbnail/hooneymoon.png",
-      "/images/galery/honeymoon-boat.jpg",
-      "/images/galery/pulau-lengkuas.jpg",
-      "/images/galery/pulau-batu-berlayar.jpg",
-      "/images/galery/pulau-pasir.jpg",
-      "/images/galery/pulau-kelayang.jpg",
-      "/images/galery/pantai-tanjung-tinggi.jpg",
-      "/images/galery/candlelight-dinner.jpg",
-      "/images/galery/danau-kaolin.jpg",
-      "/images/galery/museum-kata.jpg",
-      "/images/galery/vihara-dewi-kwan-im.jpg",
-    ],
+    galeri: ["/images/paket/thumbnail/hooneymoon.png"],
     itinerary: [
       {
         hari: 1,
@@ -698,6 +644,7 @@ export const paketList: Paket[] = [
       "Lunch seafood khas Belitung (<b>Pulau Kelayang</b>)",
       "Air mineral selama perjalanan",
       "<b>Snack Box</b> untuk perjalanan",
+      "1x Makan malam di <b>Raja Seafood Restaurant</b>",
       "Tiket masuk objek wisata",
       "Sesi <b>foto keluarga profesional</b>",
       "Dokumentasi Premium (<b>Go-Pro, Mirrorless, Drone</b>)",
@@ -710,14 +657,14 @@ export const paketList: Paket[] = [
       tabelHotelMultiple: [
         // <-- gunakan tabelHotelMultiple
         {
-          hotel: "MARIOT ⭐⭐⭐⭐✩",
+          hotel: "Fairfield By Marriott Belitung ⭐⭐⭐⭐✩",
           opsi: [
             { peserta: "4", harga: 5516250 },
             { peserta: "6", harga: 7183750 },
           ],
         },
         {
-          hotel: "Swiss-Bel ⭐⭐⭐⭐✩",
+          hotel: "Swiss-Belresort Belitung ⭐⭐⭐⭐✩",
           opsi: [
             { peserta: "4", harga: 5391250 },
             { peserta: "6", harga: 6996250 },
@@ -745,7 +692,7 @@ export const paketList: Paket[] = [
           ],
         },
         {
-          hotel: "LA LUCIA ⭐⭐⭐",
+          hotel: "La Lucia Boutique ⭐⭐⭐",
           opsi: [
             { peserta: "4", harga: 4516250 },
             { peserta: "6", harga: 5683750 },
@@ -761,17 +708,7 @@ export const paketList: Paket[] = [
       ],
       keterangan: "Harga sudah termasuk akomodasi hotel sesuai pilihan. Harga dapat berubah tergantung season dan ketersediaan hotel.",
     },
-    galeri: [
-      "/images/paket/thumbnail/family.png",
-      "/images/galery/family-boat.jpg",
-      "/images/galery/pulau-lengkuas.jpg",
-      "/images/galery/pulau-batu-berlayar.jpg",
-      "/images/galery/pulau-pasir.jpg",
-      "/images/galery/pulau-kelayang.jpg",
-      "/images/galery/pantai-tanjung-tinggi.jpg",
-      "/images/galery/goa-kelayang.jpg",
-      "/images/galery/danau-kaolin.jpg",
-    ],
+    galeri: ["/images/paket/thumbnail/family.png"],
     itinerary: [
       {
         hari: 1,
@@ -838,25 +775,27 @@ export const paketList: Paket[] = [
       "Lunch seafood khas Belitung (<b>Pulau Kelayang</b>)",
       "Air mineral selama perjalanan",
       "<b>Snack Box</b> untuk perjalanan",
+      "2x Makan malam (<b>Raja Seafood Restaurant & Nelayan Seafood</b>)",
+      "1x Makan siang di <b>Resto Vega</b>",
       "Tiket masuk objek wisata",
       "Dokumentasi Premium (<b>Go-Pro, Mirrorless, iPhone & Drone</b>)",
       "Transportasi Darat selama tour (AC)",
       "Penjemputan & pengantaran ke Bandara H.A.S. Hanandjoeddin",
       "Foto & video session keluarga di <b>Pantai Tanjung Tinggi</b>",
     ],
-    fasilitasExclude: ["Tiket pesawat menuju Belitung", "Pengeluaran pribadi (belanja, laundry, dll)", "Asuransi perjalanan", "Tips untuk guide dan crew"],
+    fasilitasExclude: ["Tiket Museum Kata", "Tiket pesawat menuju Belitung", "Pengeluaran pribadi (belanja, laundry, dll)", "Asuransi perjalanan", "Tips untuk guide dan crew"],
     detailHarga: {
       layoutType: "tabel-hotel-multiple",
       tabelHotelMultiple: [
         {
-          hotel: "MARIOT ⭐⭐⭐⭐✩",
+          hotel: "Fairfield By Marriott Belitung ⭐⭐⭐⭐✩",
           opsi: [
             { peserta: "4", harga: 9031250 },
             { peserta: "6", harga: 12106250 },
           ],
         },
         {
-          hotel: "Swiss-Bel ⭐⭐⭐⭐✩",
+          hotel: "Swiss-Belresort Belitung ⭐⭐⭐⭐✩",
           opsi: [
             { peserta: "4", harga: 8781250 },
             { peserta: "6", harga: 11731250 },
@@ -884,7 +823,7 @@ export const paketList: Paket[] = [
           ],
         },
         {
-          hotel: "LA LUCIA ⭐⭐⭐",
+          hotel: "La Lucia Boutique ⭐⭐⭐",
           opsi: [
             { peserta: "4", harga: 7031250 },
             { peserta: "6", harga: 9106250 },
@@ -901,17 +840,7 @@ export const paketList: Paket[] = [
       keterangan: "Harga sudah termasuk akomodasi hotel sesuai pilihan. Harga dapat berubah tergantung season dan ketersediaan hotel.",
     },
 
-    galeri: [
-      "/images/paket/thumbnail/family.png",
-      "/images/galery/laskar-pelangi.jpg",
-      "/images/galery/pantai-burung-mandi.jpg",
-      "/images/galery/pulau-lengkuas.jpg",
-      "/images/galery/pulau-batu-garuda.jpg",
-      "/images/galery/pulau-pasir.jpg",
-      "/images/galery/pulau-kelayang.jpg",
-      "/images/galery/pantai-tanjung-tinggi.jpg",
-      "/images/galery/danau-kaolin.jpg",
-    ],
+    galeri: ["/images/paket/thumbnail/family.png"],
     itinerary: [
       {
         hari: 1,

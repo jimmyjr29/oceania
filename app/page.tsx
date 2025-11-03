@@ -9,12 +9,10 @@ import WhyOceania from "@/components/WhyOceania";
 import FAQ from "@/components/Faq";
 import Testimonials from "@/components/Testimonials";
 import CtaBanner from "@/components/CtaBanner";
-// import { motion } from "framer-motion";
 
 export default function HomePage() {
   return (
     <>
-      {/* <section className="max-w-6xl mx-auto px-6 py-16 text-center"> */}
       <Hero />
       <ScrollVelocity />
       <WhyOceania />
@@ -24,7 +22,6 @@ export default function HomePage() {
       <FAQ />
       <Testimonials />
       <CtaBanner />
-      {/* </section> */}
     </>
   );
 }

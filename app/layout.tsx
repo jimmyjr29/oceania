@@ -6,8 +6,7 @@ import Footer from "@/components/Footer";
 import { ScrollProgress } from "@/components/magicui/scroll-progress";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import SchemaMarkup from "@/components/SchemaMarkup";
-import { Analytics } from "@vercel/analytics/next";
-
+import { Analytics } from "@vercel/analytics/react";
 const geistSans = Geist({
   subsets: ["latin"],
 });

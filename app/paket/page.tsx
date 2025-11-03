@@ -41,9 +41,9 @@ export default function PaketPage() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease: "easeOut" }} className="mb-12 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-blue-950">Pilihan Paket Wisata</span>
-          </h2>
+          </h1>
           <p className="text-slate-600 text-lg max-w-3xl mx-auto leading-relaxed">Pilih paket wisata sesuai kebutuhan Anda. Dari pantai eksotis hingga wisata alam, semua tersedia untuk pengalaman liburan tak terlupakan.</p>
         </motion.div>
 

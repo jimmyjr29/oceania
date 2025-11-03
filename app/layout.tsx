@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ScrollProgress } from "@/components/magicui/scroll-progress";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import SchemaMarkup from "@/components/SchemaMarkup";
 
 const geistSans = Geist({
   subsets: ["latin"],
@@ -74,6 +75,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <GoogleAnalytics />
       </head>
+      <SchemaMarkup />
 
       <body className={`${geistSans.className} bg-white text-gray-800 flex flex-col min-h-screen`}>
         <Navbar />

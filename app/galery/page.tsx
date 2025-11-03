@@ -48,7 +48,7 @@ export default function GaleriSection() {
             <motion.div animate={{ rotate: [0, 5, -5, 0] }} transition={{ duration: 2, repeat: Infinity }} className="text-4xl">
               📸
             </motion.div>
-            <h2 className="text-4xl md:text-5xl font-bold text-oceania-navy">Galeri Petualangan</h2>
+            <h1 className="text-4xl md:text-5xl font-bold text-oceania-navy">Galeri Petualangan</h1>
           </div>
 
           <p className="text-slate-600 text-lg max-w-3xl mx-auto leading-relaxed mb-8">Lihat momen-momen indah yang telah diabadikan dalam setiap perjalanan</p>

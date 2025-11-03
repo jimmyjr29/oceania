@@ -10,6 +10,10 @@ import FAQ from "@/components/Faq";
 import Testimonials from "@/components/Testimonials";
 import CtaBanner from "@/components/CtaBanner";
 
+// import dynamic from "next/dynamic";
+
+// const Hero = dynamic(() => import("@/components/Hero"), { ssr: false });
+
 export default function HomePage() {
   return (
     <>

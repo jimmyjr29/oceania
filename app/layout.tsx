@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { ScrollProgress } from "@/components/magicui/scroll-progress";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import SchemaMarkup from "@/components/SchemaMarkup";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   subsets: ["latin"],
@@ -120,6 +121,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         <ScrollProgress />
         <main className="flex-1">{children}</main>
+        <Analytics />
         <Footer />
       </body>
     </html>

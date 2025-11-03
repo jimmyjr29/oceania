@@ -19,7 +19,7 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50/30 to-orange-50/20 relative overflow-hidden">
+    <section className="py-20 bg-blue-50/20 relative overflow-hidden">
       <div className="max-w-4xl mx-auto px-4">
         <h2 className="text-blue-950 text-3xl md:text-4xl font-bold text-center mb-8">Apa Kata Mereka?</h2>
         <p className="text-center text-slate-600 text-lg mb-8">Berikut komentar dari beberapa klien kami.</p>

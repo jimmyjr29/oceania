@@ -26,7 +26,7 @@ export default function GaleriSection() {
   };
 
   return (
-    <section id="galery" className="py-20 bg-gradient-to-br from-slate-50 via-blue-50/30 to-orange-50/20 relative overflow-hidden">
+    <section id="galery" className="py-20 bg-blue-50/20 relative overflow-hidden">
       {/* Header */}
       <div className="text-center mb-16">
         <div className="flex items-center justify-center gap-3 mb-6">

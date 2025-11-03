@@ -9,7 +9,7 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function CtaBanner() {
   return (
-    <section className="py-20 px-4">
+    <section className="py-20 px-4 bg-blue-50/20 relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <div className="relative flex flex-col items-center justify-center overflow-hidden rounded-2xl bg-background px-8 py-20 md:px-28 md:py-28 shadow-xl">
           {/* BorderBeam efek */}

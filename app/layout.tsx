@@ -9,9 +9,62 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
+// 🌐 Metadata SEO Global
 export const metadata: Metadata = {
-  title: "Oceania Travel",
-  description: "Agensi travel modern dengan destinasi terbaik di Indonesia.",
+  metadataBase: new URL("https://oceania.co.id"),
+  title: {
+    default: "Oceania Travel — Paket Wisata Belitung & Tour Terbaik",
+    template: "%s | Oceania Travel",
+  },
+  description: "Temukan paket wisata Belitung terbaik dengan Oceania Travel. Nikmati pengalaman eksklusif, destinasi menawan, dan pelayanan profesional untuk liburan tak terlupakan di Indonesia.",
+  keywords: ["Oceania Travel", "wisata Belitung", "paket tour Belitung", "travel Belitung", "paket wisata Indonesia", "Oceania Tour", "liburan Belitung", "destinasi wisata", "travel agent Belitung"],
+  authors: [{ name: "Oceania Travel Team", url: "https://oceania.co.id" }],
+  creator: "Oceania Travel",
+  publisher: "Oceania Travel",
+  openGraph: {
+    title: "Oceania Travel — Paket Wisata Belitung & Tour Terbaik",
+    description: "Nikmati liburan tak terlupakan ke Belitung bersama Oceania Travel. Pilihan paket wisata menarik, destinasi eksklusif, dan layanan profesional.",
+    url: "https://oceania.co.id",
+    siteName: "Oceania Travel",
+    locale: "id_ID",
+    type: "website",
+    images: [
+      {
+        url: "https://oceania.co.id/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Oceania Travel - Paket Wisata Belitung",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://oceania.co.id",
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/manifest.json",
+  twitter: {
+    card: "summary_large_image",
+    title: "Oceania Travel — Paket Wisata Belitung & Tour Terbaik",
+    description: "Nikmati keindahan Belitung bersama Oceania Travel. Dapatkan pengalaman wisata eksklusif dan pelayanan terbaik.",
+    images: ["https://oceania.co.id/og-image.jpg"],
+    creator: "@oceaniatravel",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  category: "Travel & Tourism",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -20,6 +73,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${geistSans.className} bg-white text-gray-800 flex flex-col min-h-screen`}>
         {/* Navbar */}
         <Navbar />
+
+        {/* Scroll Progress Bar */}
         <ScrollProgress />
 
         {/* Main Content */}

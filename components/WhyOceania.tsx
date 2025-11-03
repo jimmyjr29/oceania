@@ -63,7 +63,7 @@ const itemVariants: Variants = {
 
 export default function WhyOceania() {
   return (
-    <section className="py-20">
+    <section className="py-20 bg-blue-50/20 relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-4">
         {/* Judul */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }} className="text-center mb-12">

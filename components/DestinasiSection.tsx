@@ -14,7 +14,7 @@ export default function DestinasiSection() {
   const destinasi = getAllDestinasi(); // ambil semua data dari lib
 
   return (
-    <section id="destinasi" className="py-20 bg-gradient-to-br from-slate-50 via-blue-50/30 to-orange-50/20 relative overflow-hidden">
+    <section id="destinasi" className="py-20 bg-blue-50/20 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-oceania-sunset/10 to-blue-200/10 rounded-full blur-xl"></div>

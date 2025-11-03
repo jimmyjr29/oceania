@@ -19,7 +19,46 @@ export const metadata: Metadata = {
     template: "%s | Oceania Travel",
   },
   description: "Temukan paket wisata Belitung terbaik dengan Oceania Travel. Nikmati pengalaman eksklusif, destinasi menawan, dan pelayanan profesional untuk liburan tak terlupakan di Indonesia.",
-  keywords: ["Oceania Travel", "wisata Belitung", "paket tour Belitung", "travel Belitung", "paket wisata Indonesia", "Oceania Tour", "liburan Belitung", "destinasi wisata", "travel agent Belitung"],
+  keywords: [
+    "Oceania Travel",
+    "wisata Belitung",
+    "paket tour Belitung",
+    "travel Belitung",
+    "paket wisata Indonesia",
+    "Oceania Tour",
+    "liburan Belitung",
+    "destinasi wisata",
+    "travel agent Belitung",
+    "Belitung Isaland tours",
+    "holiday packages Belitung",
+    "best travel agency Belitung",
+    "exclusive travel Belitung",
+    "professional travel services",
+    "Indonesian travel packages",
+    "Belitung vacation deals",
+    "Oceania holiday tours",
+    "Belitung travel experiences",
+    "custom travel Belitung",
+    "affordable travel Belitung",
+    "luxury travel Belitung",
+    "family travel Belitung",
+    "honeymoon packages Belitung",
+    "adventure tours Belitung",
+    "cultural tours Belitung",
+    "beach vacations Belitung",
+    "island hopping Belitung",
+    "nature tours Belitung",
+    "snorkeling Belitung",
+    "eco-tourism Belitung",
+    "local experiences Belitung",
+    "guided tours Belitung",
+    "group travel Belitung",
+    "solo travel Belitung",
+    "romantic getaways Belitung",
+    "budget travel Belitung",
+    "travel deals Indonesia",
+    "holiday planning Belitung",
+  ],
   authors: [{ name: "Oceania Travel Team", url: "https://oceania.co.id" }],
   creator: "Oceania Travel",
   publisher: "Oceania Travel",
@@ -73,9 +112,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="id">
       <head>
-        <GoogleAnalytics />
+        <SchemaMarkup />
+        <GoogleAnalytics GA_MEASUREMENT_ID="G-ZWB5W7R0XV" />
       </head>
-      <SchemaMarkup />
 
       <body className={`${geistSans.className} bg-white text-gray-800 flex flex-col min-h-screen`}>
         <Navbar />

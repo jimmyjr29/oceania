@@ -37,7 +37,6 @@ export default function SchemaMarkup() {
       longitude: "107.6397",
     },
     telephone: "+62 851-3853-4353",
-    email: "info@oceania.co.id",
     priceRange: "Rp300.000 - Rp5.000.000",
     openingHoursSpecification: [
       {
@@ -54,82 +53,6 @@ export default function SchemaMarkup() {
       worstRating: "1",
       reviewCount: "178",
     },
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Paket Wisata Belitung",
-      itemListElement: [
-        {
-          "@type": "Offer",
-          name: "Paket Hoping Island Belitung",
-          url: "https://oceania.co.id/paket/hooping-island-belitung-reguler",
-          price: "375000",
-          priceCurrency: "IDR",
-          availability: "https://schema.org/InStock",
-          validFrom: "2025-01-01",
-          priceValidUntil: "2025-12-31",
-          itemOffered: {
-            "@type": "Product",
-            name: "Paket Hoping Island Belitung",
-            description: "Paket wisata island hopping Belitung dengan kunjungan ke pulau-pulau eksotis",
-            image: "https://oceania.co.id/og-image.jpg",
-          },
-        },
-        {
-          "@type": "Offer",
-          name: "Paket 2D1N Belitung Island",
-          url: "https://oceania.co.id/paket/trip-2d1n-belitung-island",
-          price: "1200000",
-          priceCurrency: "IDR",
-          availability: "https://schema.org/InStock",
-          validFrom: "2025-01-01",
-          priceValidUntil: "2025-12-31",
-          itemOffered: {
-            "@type": "Product",
-            name: "Paket 2D1N Belitung Island",
-            description: "Paket wisata 2 hari 1 malam di Belitung dengan akomodasi dan tour lengkap",
-            image: "https://oceania.co.id/og-image.jpg",
-          },
-        },
-        {
-          "@type": "Offer",
-          name: "Paket 3D2N Belitung Island",
-          url: "https://oceania.co.id/paket/trip-3d2n-belitung-island",
-          price: "1750000",
-          priceCurrency: "IDR",
-          availability: "https://schema.org/InStock",
-          validFrom: "2025-01-01",
-          priceValidUntil: "2025-12-31",
-          itemOffered: {
-            "@type": "Product",
-            name: "Paket 3D2N Belitung Island",
-            description: "Paket wisata 3 hari 2 malam di Belitung dengan destinasi lengkap",
-            image: "https://oceania.co.id/og-image.jpg",
-          },
-        },
-        {
-          "@type": "Offer",
-          name: "Paket Honeymoon 3D2N Belitung Island",
-          url: "https://oceania.co.id/paket/honeymoon-3d2n-belitung",
-          price: "2800000",
-          priceCurrency: "IDR",
-          availability: "https://schema.org/InStock",
-          validFrom: "2025-01-01",
-          priceValidUntil: "2025-12-31",
-          itemOffered: {
-            "@type": "Product",
-            name: "Paket Honeymoon 3D2N Belitung Island",
-            description: "Paket honeymoon romantis 3 hari 2 malam di Belitung dengan fasilitas eksklusif",
-            image: "https://oceania.co.id/og-image.jpg",
-          },
-        },
-      ],
-    },
-    founder: {
-      "@type": "Organization",
-      name: "Oceania Team",
-    },
-    paymentAccepted: "Cash, Credit Card, Bank Transfer, E-Wallet",
-    currenciesAccepted: "IDR",
   };
 
   const breadcrumbSchema = {
@@ -172,35 +95,124 @@ export default function SchemaMarkup() {
     },
   };
 
-  const localBusinessSchema = {
+  // Product Schema untuk Paket 1
+  const product1Schema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://oceania.co.id/#localbusiness",
-    name: "Oceania Travel",
-    image: "https://oceania.co.id/icon-512.png",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "Jl. Masda Adisucipto No.22, Kelurahan Parit",
-      addressLocality: "Tanjung Pandan",
-      addressRegion: "Bangka Belitung",
-      postalCode: "33411",
-      addressCountry: "ID",
+    "@type": "Product",
+    name: "Paket Hoping Island Belitung",
+    description: "Paket wisata island hopping Belitung dengan kunjungan ke pulau-pulau eksotis. Nikmati keindahan pantai dan pulau-pulau cantik di Belitung.",
+    image: "https://oceania.co.id/og-image.jpg",
+    brand: {
+      "@type": "Brand",
+      name: "Oceania Travel",
     },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: "-2.7447",
-      longitude: "107.6397",
-    },
-    telephone: "+62 851-3853-4353",
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        opens: "08:00",
-        closes: "21:00",
+    offers: {
+      "@type": "Offer",
+      url: "https://oceania.co.id/paket/hooping-island-belitung-reguler",
+      priceCurrency: "IDR",
+      price: "375000",
+      availability: "https://schema.org/InStock",
+      priceValidUntil: "2025-12-31",
+      seller: {
+        "@type": "Organization",
+        name: "Oceania Travel",
       },
-    ],
-    priceRange: "Rp300.000 - Rp5.000.000",
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "45",
+    },
+  };
+
+  // Product Schema untuk Paket 2
+  const product2Schema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "Paket 2D1N Belitung Island",
+    description: "Paket wisata 2 hari 1 malam di Belitung dengan akomodasi hotel dan tour lengkap. Jelajahi destinasi wisata terbaik Belitung.",
+    image: "https://oceania.co.id/og-image.jpg",
+    brand: {
+      "@type": "Brand",
+      name: "Oceania Travel",
+    },
+    offers: {
+      "@type": "Offer",
+      url: "https://www.oceania.co.id/paket/Trip-2d1n-belitung-island",
+      priceCurrency: "IDR",
+      price: "1200000",
+      availability: "https://schema.org/InStock",
+      priceValidUntil: "2025-12-31",
+      seller: {
+        "@type": "Organization",
+        name: "Oceania Travel",
+      },
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "52",
+    },
+  };
+
+  // Product Schema untuk Paket 3
+  const product3Schema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "Paket 3D2N Belitung Island",
+    description: "Paket wisata 3 hari 2 malam di Belitung dengan destinasi lengkap. Eksplorasi wisata alam, budaya, dan kuliner khas Belitung.",
+    image: "https://oceania.co.id/og-image.jpg",
+    brand: {
+      "@type": "Brand",
+      name: "Oceania Travel",
+    },
+    offers: {
+      "@type": "Offer",
+      url: "https://www.oceania.co.id/paket/trip-3d2n-belitung-Island",
+      priceCurrency: "IDR",
+      price: "1750000",
+      availability: "https://schema.org/InStock",
+      priceValidUntil: "2025-12-31",
+      seller: {
+        "@type": "Organization",
+        name: "Oceania Travel",
+      },
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      reviewCount: "38",
+    },
+  };
+
+  // Product Schema untuk Paket 4
+  const product4Schema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "Paket Honeymoon 3D2N Belitung Island",
+    description: "Paket honeymoon romantis 3 hari 2 malam di Belitung dengan fasilitas eksklusif. Ciptakan momen romantis yang tak terlupakan bersama pasangan.",
+    image: "https://oceania.co.id/og-image.jpg",
+    brand: {
+      "@type": "Brand",
+      name: "Oceania Travel",
+    },
+    offers: {
+      "@type": "Offer",
+      url: "https://oceania.co.id/paket/honeymoon-3d2n-belitung",
+      priceCurrency: "IDR",
+      price: "2800000",
+      availability: "https://schema.org/InStock",
+      priceValidUntil: "2025-12-31",
+      seller: {
+        "@type": "Organization",
+        name: "Oceania Travel",
+      },
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      reviewCount: "43",
+    },
   };
 
   return (
@@ -208,7 +220,10 @@ export default function SchemaMarkup() {
       <Script id="schema-travelagency" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
       <Script id="schema-breadcrumb" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Script id="schema-website" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
-      <Script id="schema-localbusiness" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <Script id="schema-product1" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(product1Schema) }} />
+      <Script id="schema-product2" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(product2Schema) }} />
+      <Script id="schema-product3" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(product3Schema) }} />
+      <Script id="schema-product4" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(product4Schema) }} />
     </>
   );
 }

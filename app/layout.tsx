@@ -7,6 +7,7 @@ import { ScrollProgress } from "@/components/magicui/scroll-progress";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import { Analytics } from "@vercel/analytics/react";
+
 const geistSans = Geist({
   subsets: ["latin"],
 });
@@ -15,7 +16,7 @@ const geistSans = Geist({
 export const metadata: Metadata = {
   metadataBase: new URL("https://oceania.co.id"),
   title: {
-    default: "Oceania Travel — Paket Wisata Belitung & Tour Terbaik",
+    default: "Oceania Tour & Travel — Agensi Wisata Belitung Terbaik",
     template: "%s | Oceania Travel",
   },
   description: "Temukan paket wisata Belitung terbaik dengan Oceania Travel. Nikmati pengalaman eksklusif, destinasi menawan, dan pelayanan profesional untuk liburan tak terlupakan di Indonesia.",
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
     "liburan Belitung",
     "destinasi wisata",
     "travel agent Belitung",
-    "Belitung Isaland tours",
+    "Belitung Island tours",
     "holiday packages Belitung",
     "best travel agency Belitung",
     "exclusive travel Belitung",
@@ -75,6 +76,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: "Oceania Travel - Paket Wisata Belitung",
+        type: "image/jpeg",
       },
     ],
   },
@@ -82,9 +84,21 @@ export const metadata: Metadata = {
     canonical: "https://oceania.co.id",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "32x32" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
+    ],
     shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    other: [
+      {
+        rel: "mask-icon",
+        url: "/safari-pinned-tab.svg",
+        color: "#5bbad5",
+      },
+    ],
   },
   manifest: "/manifest.json",
   twitter: {
@@ -106,6 +120,10 @@ export const metadata: Metadata = {
     },
   },
   category: "Travel & Tourism",
+  other: {
+    "msapplication-TileColor": "#2b5797",
+    "theme-color": "#ffffff",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

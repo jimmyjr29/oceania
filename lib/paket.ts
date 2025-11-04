@@ -1,34 +1,3 @@
-// export interface Paket {
-//   id: string;
-//   slug: string;
-//   nama: string;
-//   durasi: string;
-//   lokasi: string;
-//   harga: number;
-//   rating: number;
-//   deskripsiSingkat: string;
-//   image: string;
-//   banner: string;
-//   deskripsiLengkap: string;
-//   fasilitasInclude: string[];
-//   fasilitasExclude?: string[];
-//   detailHarga: {
-//     tabel: {
-//       jumlahPeserta: string;
-//       harga: number;
-//     }[];
-//     keterangan: string;
-//   };
-//   galeri: string[];
-//   itinerary: {
-//     hari: number;
-//     judul: string;
-//     deskripsi: string;
-//     destinasi: string[];
-//   }[];
-//   kategori: "Reguler" | "Premium";
-// }
-
 // Interface untuk tabel harga berdasarkan peserta (layout sederhana)
 export interface TabelPeserta {
   jumlahPeserta: string;

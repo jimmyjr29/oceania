@@ -212,6 +212,7 @@ export const destinasiData: Destinasi[] = [
   },
 ];
 
+export const destinasi = destinasiData;
 // Helper functions
 export function getDestinasiBySlug(slug: string): Destinasi | undefined {
   return destinasiData.find((d) => d.slug === slug);

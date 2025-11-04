@@ -1,24 +1,19 @@
 {
-  "name": "Oceania Travel",
-  "short_name": "Oceania",
-  "description": "Paket wisata Belitung terbaik dengan pelayanan profesional.",
+  "name": "Oceania Travel - Paket Wisata Belitung",
+  "short_name": "Oceania Travel",
+  "description": "Agensi wisata Belitung terbaik dengan paket tour eksklusif",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#008080",
+  "theme_color": "#2b5797",
   "icons": [
     {
-      "src": "/favicon.ico",
-      "sizes": "512x512",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "/logo.png",
+      "src": "/icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/brand.png",
+      "src": "/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }

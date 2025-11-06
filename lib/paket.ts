@@ -67,7 +67,7 @@ export interface Paket {
 export const paketList: Paket[] = [
   {
     id: "1",
-    slug: "hoping-island-belitung",
+    slug: "hopping-island-belitung",
     nama: "Hopping Island Belitung",
     kategori: "Premium",
     durasi: "1 Hari",
@@ -160,7 +160,7 @@ export const paketList: Paket[] = [
 
   {
     id: "2",
-    slug: "hoping-island-belitung-reguler",
+    slug: "hopping-island-belitung-reguler",
     nama: "Hopping Island Belitung",
     kategori: "Reguler",
     durasi: "1 Hari",

@@ -2,9 +2,9 @@
 
 import Script from "next/script";
 
-interface GoogleAnalyticsProps {
+type GoogleAnalyticsProps = {
   GA_MEASUREMENT_ID: string;
-}
+};
 
 export default function GoogleAnalytics({ GA_MEASUREMENT_ID }: GoogleAnalyticsProps) {
   return (

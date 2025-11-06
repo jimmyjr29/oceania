@@ -197,7 +197,7 @@ export const paketList: Paket[] = [
 
   {
     id: "3",
-    slug: "Trip-2d1n-belitung-island",
+    slug: "trip-2d1n-belitung-island",
     nama: "Trip 2D1N Belitung Island",
     kategori: "Premium",
     durasi: "2 Hari 1 Malam",

@@ -2,15 +2,7 @@
 
 import Script from "next/script";
 
-export default function GoogleAnalytics() {
-  const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID;
-
-  // Jangan jalankan di dev mode atau jika GA_ID kosong
-  if (!GA_MEASUREMENT_ID || process.env.NODE_ENV === "development") {
-    console.warn("Google Analytics ID is not set or running in development mode");
-    return null;
-  }
-
+export default function GoogleAnalytics({ GA_MEASUREMENT_ID }: { GA_MEASUREMENT_ID: string }) {
   return (
     <>
       <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} />

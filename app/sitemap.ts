@@ -1,9 +1,6 @@
 import { MetadataRoute } from "next";
 import { destinasiData } from "@/lib/destinasi";
 import { paketList } from "@/lib/paket";
-// import testimoni/galery kalau perlu
-// import { testimoniList } from "@/lib/testimoni";
-// import { galeryList } from "@/lib/galery";
 
 type SitemapEntry = {
   url: string;

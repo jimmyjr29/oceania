@@ -119,7 +119,7 @@ export default function DestinasiDetailClient({ dest }: { dest: Destinasi }) {
                       <span className="hidden sm:inline text-white/40">•</span>
                       <a href="mailto:info@oceaniatravel.com" className="flex items-center gap-2 hover:text-oceania-sunset transition-colors">
                         <Mail className="w-4 h-4" />
-                        <span className="font-medium">info@oceaniatravel.com</span>
+                        <span className="font-medium">oceaniaid@gmail.com</span>
                       </a>
                     </div>
                   </div>
@@ -161,8 +161,8 @@ export default function DestinasiDetailClient({ dest }: { dest: Destinasi }) {
 
               {/* Tombol Previous - hanya tampil jika lebih dari 1 foto */}
               {dest.footage.length > 1 && (
-                <button onClick={handlePrev} className="absolute left-4 z-50 text-white bg-black/60 hover:bg-black/80 backdrop-blur-sm rounded-full p-3 transition-all duration-200 hover:scale-110" aria-label="Foto Sebelumnya">
-                  <ChevronLeft className="w-8 h-8" />
+                <button onClick={handlePrev} className="absolute left-3 z-50 text-white bg-black/60 hover:bg-black/80 backdrop-blur-sm rounded-full p-2 transition-all duration-200 hover:scale-110" aria-label="Foto Sebelumnya">
+                  <ChevronLeft className="w-5 h-5" />
                 </button>
               )}
 
@@ -182,8 +182,8 @@ export default function DestinasiDetailClient({ dest }: { dest: Destinasi }) {
 
               {/* Tombol Next - hanya tampil jika lebih dari 1 foto */}
               {dest.footage.length > 1 && (
-                <button onClick={handleNext} className="absolute right-4 z-50 text-white bg-black/60 hover:bg-black/80 backdrop-blur-sm rounded-full p-3 transition-all duration-200 hover:scale-110" aria-label="Foto Berikutnya">
-                  <ChevronRight className="w-8 h-8" />
+                <button onClick={handleNext} className="absolute right-2 z-50 text-white bg-black/60 hover:bg-black/80 backdrop-blur-sm rounded-full p-2 transition-all duration-200 hover:scale-110" aria-label="Foto Berikutnya">
+                  <ChevronRight className="w-5 h-5" />
                 </button>
               )}
             </motion.div>

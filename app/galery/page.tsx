@@ -45,13 +45,9 @@ export default function GaleriSection() {
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }} className="text-center mb-8 mt-10">
           {/* Title with icon */}
           <div className="flex items-center justify-center gap-3 mb-6">
-            <motion.div animate={{ rotate: [0, 5, -5, 0] }} transition={{ duration: 2, repeat: Infinity }} className="text-4xl">
-              📸
-            </motion.div>
             <h1 className="text-4xl md:text-5xl font-bold text-oceania-navy">Galeri Petualangan</h1>
           </div>
-
-          <p className="text-slate-600 text-lg max-w-3xl mx-auto leading-relaxed mb-8">Lihat momen-momen indah yang telah diabadikan dalam setiap perjalanan</p>
+          <p className="text-slate-600 text-lg max-w-3xl mx-auto leading-relaxed mb-8">Lihat momen-momen indah yang telah diabadikan dalam setiap perjalanan bersama kami</p>
         </motion.div>
 
         {/* Filter Categories */}
@@ -77,20 +73,18 @@ export default function GaleriSection() {
                 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => handleCategoryChange(category.id)}
-                className={`
-                  group relative px-6 py-3 rounded-full font-medium text-sm md:text-base transition-all duration-300 border-2 backdrop-blur-sm
+                className={`group relative px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 rounded-full font-medium text-xs sm:text-sm md:text-base transition-all duration-300 border-2 backdrop-blur-sm
                   ${
                     activeCategory === category.id
                       ? "bg-gradient-to-r from-oceania-sunset to-blue-900 text-white border-oceania-sunset shadow-lg shadow-oceania-sunset/30"
                       : "bg-white/80 text-oceania-navy border-white/50 hover:border-oceania-sunset/30 hover:bg-white/90 hover:shadow-md"
-                  }
-                `}
+                  }`}
               >
                 {/* Glowing effect for active */}
                 {activeCategory === category.id && <motion.div layoutId="activeGlow" className="absolute inset-0 bg-gradient-to-r from-oceania-sunset to-blue-900 rounded-full opacity-20 blur-lg" />}
 
-                <div className="relative flex items-center gap-2">
-                  <span className="text-lg">{category.icon}</span>
+                <div className="relative flex items-center gap-1 sm:gap-2">
+                  <span className="text-base sm:text-lg">{category.icon}</span>
                   <span>{category.label}</span>
                 </div>
 
@@ -141,8 +135,10 @@ export default function GaleriSection() {
                 </div>
 
                 {/* Center camera icon */}
-                <div className="self-center bg-white/90 backdrop-blur-sm rounded-full p-3 transform scale-0 group-hover:scale-100 transition-transform duration-300 delay-100">
-                  <Eye className="w-6 h-6 text-oceania-navy" />
+                <div className="self-center bg-white/50 backdrop-blur-sm rounded-full p-3 transform scale-0 group-hover:scale-100 transition-transform duration-300 delay-100">
+                  <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                  </svg>
                 </div>
 
                 {/* Title at bottom - only visible on hover */}
@@ -164,9 +160,10 @@ export default function GaleriSection() {
                   e.stopPropagation();
                   handlePrev();
                 }}
-                className="absolute left-6 text-white bg-black/50 rounded-full p-3 hover:bg-black/70 transition-colors"
+                className="absolute left-3 z-50 text-white bg-black/60 hover:bg-black/80 backdrop-blur-sm rounded-full p-2 transition-all duration-200 hover:scale-110"
+                aria-label="Foto Sebelumnya"
               >
-                <ChevronLeft className="w-8 h-8" />
+                <ChevronLeft className="w-5 h-5" />
               </button>
 
               {/* Image & Close Button */}
@@ -181,8 +178,8 @@ export default function GaleriSection() {
               >
                 <Card className="overflow-hidden rounded-2xl bg-white border-0 relative">
                   {/* Close Button in top-right of card */}
-                  <button onClick={() => setActiveIndex(null)} className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2 hover:bg-black/70 z-10 transition-colors" aria-label="Tutup">
-                    <X className="w-6 h-6" />
+                  <button onClick={() => setActiveIndex(null)} className="absolute top-3 right-3 text-white bg-black/50 rounded-full p-1 hover:bg-black/70 z-10 transition-colors" aria-label="Tutup">
+                    <X className="w-2 h-2" />
                   </button>
                   <CardContent className="p-4">
                     {imageErrors[filteredItems[activeIndex!].id] ? (
@@ -215,9 +212,10 @@ export default function GaleriSection() {
                   e.stopPropagation();
                   handleNext();
                 }}
-                className="absolute right-6 text-white bg-black/50 rounded-full p-3 hover:bg-black/70 transition-colors"
+                className="absolute right-2 z-50 text-white bg-black/60 hover:bg-black/80 backdrop-blur-sm rounded-full p-2 transition-all duration-200 hover:scale-110"
+                aria-label="Foto Berikutnya"
               >
-                <ChevronRight className="w-8 h-8" />
+                <ChevronRight className="w-5 h-5" />
               </button>
             </motion.div>
           )}

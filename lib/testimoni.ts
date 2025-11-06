@@ -125,7 +125,7 @@ export const testimonials: Testimoni[] = [
     name: "Ahmad Fadli",
     origin: "Singapore",
     package: "Hooping Island Belitung",
-    rating: 5,
+    rating: 4,
     comment: "Perfect island hopping experience!",
     description: "We visited beautiful small islands and enjoyed clear blue water. Oceania's service was excellent from start to finish.",
     image: "/images/testimoni/man.png",

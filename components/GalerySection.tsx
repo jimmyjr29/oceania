@@ -54,7 +54,7 @@ export default function GaleriSection() {
                   <Image src={item.image} alt={item.title} fill className="object-cover" />
 
                   {/* Overlay hover */}
-                  <div className="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition flex items-center justify-center">
+                  <div className="absolute inset-0 bg-white/50 backdrop-blur-sm opacity-0 hover:opacity-100 transition flex items-center justify-center">
                     <Eye className="w-8 h-8 text-white" />
                   </div>
                 </CardContent>
@@ -69,8 +69,15 @@ export default function GaleriSection() {
         {activeIndex !== null && (
           <motion.div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
             {/* Prev Button */}
-            <button onClick={handlePrev} className="absolute left-6 text-white bg-black/50 rounded-full p-3 hover:bg-black/70">
-              <ChevronLeft className="w-8 h-8" />
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                handlePrev();
+              }}
+              className="absolute left-3 z-50 text-white bg-black/60 hover:bg-black/80 backdrop-blur-sm rounded-full p-2 transition-all duration-200 hover:scale-110"
+              aria-label="Foto Sebelumnya"
+            >
+              <ChevronLeft className="w-5 h-5" />
             </button>
 
             {/* Image & Close Button */}
@@ -88,8 +95,15 @@ export default function GaleriSection() {
             </motion.div>
 
             {/* Next Button */}
-            <button onClick={handleNext} className="absolute right-6 text-white bg-black/50 rounded-full p-3 hover:bg-black/70">
-              <ChevronRight className="w-8 h-8" />
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                handleNext();
+              }}
+              className="absolute right-2 z-50 text-white bg-black/60 hover:bg-black/80 backdrop-blur-sm rounded-full p-2 transition-all duration-200 hover:scale-110"
+              aria-label="Foto Berikutnya"
+            >
+              <ChevronRight className="w-5 h-5" />
             </button>
           </motion.div>
         )}

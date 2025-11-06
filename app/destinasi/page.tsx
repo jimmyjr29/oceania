@@ -15,16 +15,13 @@ export default function DestinasiPage() {
   const [selectedKategori, setSelectedKategori] = useState<string>("Semua");
   const [sortOption, setSortOption] = useState<string>("nama");
 
-  // ambil data dari lib
   const allDestinasi: Destinasi[] = destinasiData;
 
-  // kategori unik
   const kategoris = useMemo(() => {
     const unique = Array.from(new Set(allDestinasi.map((d: Destinasi) => d.kategori)));
     return ["Semua", ...unique];
   }, [allDestinasi]);
 
-  // filter + sort (beri tipe eksplisit)
   const filteredDestinasi = useMemo<Destinasi[]>(() => {
     const q = searchTerm.trim().toLowerCase();
 
@@ -46,7 +43,7 @@ export default function DestinasiPage() {
   return (
     <div className="min-h-screen bg-white/80">
       {/* Hero Section */}
-      <section className="relative bg-white/80 pt-30 pb-10">
+      <section className="relative bg-white/80 pt-30">
         <div className="relative max-w-7xl mx-auto px-6 text-center">
           <motion.h1 className="text-4xl md:text-5xl font-bold mb-4 text-blue-950" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             Jelajahi Keindahan Belitung
@@ -68,18 +65,22 @@ export default function DestinasiPage() {
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
               <Input placeholder="Cari destinasi wisata..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="pl-10 pr-4 py-2 w-full" />
             </div>
-
             {/* Category Filter */}
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap justify-center gap-2 text-center">
               {kategoris.map((kategori) => (
-                <Button key={kategori} variant={selectedKategori === kategori ? "default" : "outline"} size="sm" onClick={() => setSelectedKategori(kategori)}>
+                <Button
+                  key={kategori}
+                  variant={selectedKategori === kategori ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setSelectedKategori(kategori)}
+                  className="min-w-[100px] sm:min-w-[120px]" // opsional, agar lebar tombol seragam
+                >
                   {kategori}
                 </Button>
               ))}
             </div>
-
             {/* Sorting Dropdown */}
-            <div className="flex items-center gap-2 whitespace-nowrap">
+            <div className="flex items-center gap-2 whitespace-nowrap justify-center sm:justify-start">
               <label htmlFor="sort" className="text-sm text-gray-600">
                 Urutkan:
               </label>

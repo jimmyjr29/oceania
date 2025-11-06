@@ -428,8 +428,8 @@ export default function PaketDetailPage({ slug }: PaketDetailPageProps) {
 
               {/* Tombol Previous - hanya tampil jika lebih dari 1 foto */}
               {paket.galeri.length > 1 && (
-                <button onClick={handlePrev} className="absolute left-4 z-50 text-white bg-black/60 hover:bg-black/80 backdrop-blur-sm rounded-full p-3 transition-all duration-200 hover:scale-110" aria-label="Foto Sebelumnya">
-                  <ChevronLeft className="w-8 h-8" />
+                <button onClick={handlePrev} className="absolute left-3 z-50 text-white bg-black/60 hover:bg-black/80 backdrop-blur-sm rounded-full p-2 transition-all duration-200 hover:scale-110" aria-label="Foto Sebelumnya">
+                  <ChevronLeft className="w-5 h-5" />
                 </button>
               )}
 
@@ -449,8 +449,8 @@ export default function PaketDetailPage({ slug }: PaketDetailPageProps) {
 
               {/* Tombol Next - hanya tampil jika lebih dari 1 foto */}
               {paket.galeri.length > 1 && (
-                <button onClick={handleNext} className="absolute right-4 z-50 text-white bg-black/60 hover:bg-black/80 backdrop-blur-sm rounded-full p-3 transition-all duration-200 hover:scale-110" aria-label="Foto Berikutnya">
-                  <ChevronRight className="w-8 h-8" />
+                <button onClick={handleNext} className="absolute right-2 z-50 text-white bg-black/60 hover:bg-black/80 backdrop-blur-sm rounded-full p-2 transition-all duration-200 hover:scale-110" aria-label="Foto Berikutnya">
+                  <ChevronRight className="w-5 h-5" />
                 </button>
               )}
             </motion.div>

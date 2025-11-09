@@ -28,33 +28,76 @@ export default function GaleriSection() {
   return (
     <section id="galery" className="py-20 bg-blue-50/20 relative overflow-hidden">
       {/* Header */}
-      <div className="text-center mb-16">
+      <div className="text-center mb-16 px-6">
         <div className="flex items-center justify-center gap-3 mb-6">
           <h2 className="text-4xl md:text-5xl font-bold text-blue-950">Galeri Petualangan</h2>
         </div>
         <p className="text-slate-600 text-lg max-w-3xl mx-auto leading-relaxed">Lihat momen-momen indah yang telah diabadikan dalam setiap perjalanan</p>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
-        {/* Gallery Marquee */}
-        <Marquee pauseOnHover className="[--duration:40s]">
+      {/* Gradient Overlay (Fade Kiri-Kanan) */}
+      <div className="absolute top-0 left-0 w-32 md:w-64 h-full z-20 pointer-events-none bg-gradient-to-r from-blue-50/90 via-blue-50/30 to-transparent" />
+      <div className="absolute top-0 right-0 w-32 md:w-64 h-full z-20 pointer-events-none bg-gradient-to-l from-blue-50/90 via-blue-50/30 to-transparent" />
+
+      {/* Marquee Container */}
+      <div className="w-full relative z-10 overflow-hidden flex flex-col items-center gap-4 px-4 md:px-4">
+        {/* Marquee Atas */}
+        <Marquee
+          pauseOnHover
+          className="[--duration:80s]"
+          style={{
+            ["--duration" as any]: `${Math.max(40, galleryItems.length * 3)}s`,
+          }}
+        >
           {galleryItems.map((item, index) => (
             <motion.div
-              key={item.id}
+              key={`top-${item.id}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.01 }}
               whileHover={{ scale: 1.05 }}
-              className="mx-3 cursor-pointer"
+              className="mx-4 cursor-pointer"
               onClick={() => setActiveIndex(index)}
             >
-              <Card className="overflow-hidden rounded-2xl shadow-lg border-0 w-80 aspect-[16/9] relative">
+              <Card className="overflow-hidden rounded-2xl shadow-lg border-0 w-64 sm:w-72 md:w-80 lg:w-96 aspect-[16/9] relative">
                 <CardContent className="absolute inset-0 p-0">
                   <Image src={item.image} alt={item.title} fill className="object-cover" />
-
                   {/* Overlay hover */}
-                  <div className="absolute inset-0 bg-white/50 backdrop-blur-sm opacity-0 hover:opacity-100 transition flex items-center justify-center">
+                  <div className="absolute inset-0 bg-black/30 backdrop-blur-sm opacity-0 hover:opacity-100 transition flex items-center justify-center">
+                    <Eye className="w-8 h-8 text-white" />
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </Marquee>
+
+        {/* Marquee Bawah (Arah Berlawanan) */}
+        <Marquee
+          pauseOnHover
+          reverse
+          className="[--duration:80s]"
+          style={{
+            ["--duration" as any]: `${Math.max(40, galleryItems.length * 3)}s`,
+          }}
+        >
+          {galleryItems.map((item, index) => (
+            <motion.div
+              key={`bottom-${item.id}`}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.01 }}
+              whileHover={{ scale: 1.05 }}
+              className="mx-4 cursor-pointer"
+              onClick={() => setActiveIndex(index)}
+            >
+              <Card className="overflow-hidden rounded-2xl shadow-lg border-0 w-64 sm:w-72 md:w-80 lg:w-96 aspect-[16/9] relative">
+                <CardContent className="absolute inset-0 p-0">
+                  <Image src={item.image} alt={item.title} fill className="object-cover" />
+                  {/* Overlay hover */}
+                  <div className="absolute inset-0 bg-black/30 backdrop-blur-sm opacity-0 hover:opacity-100 transition flex items-center justify-center">
                     <Eye className="w-8 h-8 text-white" />
                   </div>
                 </CardContent>
@@ -83,7 +126,6 @@ export default function GaleriSection() {
             {/* Image & Close Button */}
             <motion.div key={activeIndex} initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.8, opacity: 0 }} transition={{ duration: 0.3 }} className="max-w-4xl w-full px-6 relative">
               <Card className="overflow-hidden rounded-2xl bg-white border-0 relative">
-                {/* Close Button in top-right of card */}
                 <button onClick={() => setActiveIndex(null)} className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2 hover:bg-black/70 z-10" aria-label="Tutup">
                   <X className="w-6 h-6" />
                 </button>

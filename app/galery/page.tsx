@@ -178,8 +178,8 @@ export default function GaleriSection() {
               >
                 <Card className="overflow-hidden rounded-2xl bg-white border-0 relative">
                   {/* Close Button in top-right of card */}
-                  <button onClick={() => setActiveIndex(null)} className="absolute top-3 right-3 text-white bg-black/50 rounded-full p-1 hover:bg-black/70 z-10 transition-colors" aria-label="Tutup">
-                    <X className="w-2 h-2" />
+                  <button onClick={() => setActiveIndex(null)} className="absolute top-3 right-3 text-white bg-black/50 rounded-full p-2 hover:bg-black/70 z-10 transition-colors" aria-label="Tutup">
+                    <X className="w-4 h-4" />
                   </button>
                   <CardContent className="p-4">
                     {imageErrors[filteredItems[activeIndex!].id] ? (

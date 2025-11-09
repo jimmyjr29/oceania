@@ -45,9 +45,11 @@ export default function GaleriSection() {
         <Marquee
           pauseOnHover
           className="[--duration:80s]"
-          style={{
-            ["--duration" as any]: `${Math.max(40, galleryItems.length * 3)}s`,
-          }}
+          style={
+            {
+              "--duration": `${Math.max(40, galleryItems.length * 3)}s`,
+            } as React.CSSProperties
+          }
         >
           {galleryItems.map((item, index) => (
             <motion.div
@@ -78,9 +80,11 @@ export default function GaleriSection() {
           pauseOnHover
           reverse
           className="[--duration:80s]"
-          style={{
-            ["--duration" as any]: `${Math.max(40, galleryItems.length * 3)}s`,
-          }}
+          style={
+            {
+              "--duration": `${Math.max(40, galleryItems.length * 3)}s`,
+            } as React.CSSProperties
+          }
         >
           {galleryItems.map((item, index) => (
             <motion.div

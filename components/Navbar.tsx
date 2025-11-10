@@ -80,7 +80,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center gap-2">
-            <Image src="/logo.png" alt="Logo Oceania" width={40} height={40} />
+            <Image src="/logo.svg" alt="Logo Oceania Travel Belitung" width={40} height={40} />
             <button onClick={() => handleMenuClick("#beranda")} className={`text-2xl font-bold transition-colors duration-300 cursor-pointer ${textColor}`}>
               OCEANIA
             </button>

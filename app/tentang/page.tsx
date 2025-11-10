@@ -31,7 +31,7 @@ export default function AboutUs() {
           <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }} viewport={{ once: true }} className="flex justify-center">
             <div className="rounded-full bg-gradient-to-tr from-orange-400 to-blue-900 p-1">
               <div className="rounded-full bg-orange-50 p-10 md:p-16">
-                <Image src="/brand.png" alt="Logo Oceania Travel" width={160} height={160} />
+                <Image src="/logo.png" alt="Logo Oceania Travel" width={160} height={160} />
               </div>
             </div>
           </motion.div>

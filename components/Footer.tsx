@@ -44,7 +44,7 @@ const Footer = () => {
           {/* Logo */}
           <div>
             <button onClick={() => handleMenuClick("#beranda")} className="flex items-center space-x-1 cursor-pointer">
-              <Image src="/logo.png" alt="Oceania Logo" width={40} height={40} className="object-contain" priority />
+              <Image src="/logo.svg" alt="Logo Oceania Travel Belitung" width={40} height={40} className="object-contain" priority />
               <span className="text-xl font-bold text-white">OCEANIA</span>
             </button>
 

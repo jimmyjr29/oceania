@@ -307,6 +307,12 @@ export const paketList: Paket[] = [
       "/images/paket/hopping/hopping18.jpg",
       "/images/paket/hopping/hopping19.jpg",
       "/images/paket/hopping/hopping20.jpg",
+      //citytour
+      "/images/destinasi/rumah-adat/rumah-adat1.jpg",
+      "/images/destinasi/rumah-adat/rumah-adat2.jpg",
+      "/images/destinasi/tugu-satam/tugusatam1.jpg",
+      "/images/destinasi/tugu-satam/tugusatam2.jpg",
+      "/images/destinasi/tugu-satam/tugusatam3.jpg",
     ],
 
     itinerary: [
@@ -418,6 +424,21 @@ export const paketList: Paket[] = [
       "/images/paket/hopping/hopping18.jpg",
       "/images/paket/hopping/hopping19.jpg",
       "/images/paket/hopping/hopping20.jpg",
+      //citytour
+      "/images/destinasi/rumah-adat/rumah-adat1.jpg",
+      "/images/destinasi/rumah-adat/rumah-adat2.jpg",
+      "/images/destinasi/tugu-satam/tugusatam1.jpg",
+      "/images/destinasi/tugu-satam/tugusatam2.jpg",
+      "/images/destinasi/tugu-satam/tugusatam3.jpg",
+      //belitung timur
+      "/images/destinasi/burung-mandi/burung-mandi1.jpg",
+      "/images/destinasi/burung-mandi/burung-mandi4.jpg",
+      "/images/destinasi/vihara/vihara6.jpg",
+      "/images/destinasi/vihara/vihara7.jpg",
+      "/images/destinasi/vihara/vihara12.jpg",
+      "/images/destinasi/laskar-pelangi/laskar-pelangi11.jpg",
+      "/images/destinasi/laskar-pelangi/laskar-pelangi7.jpg",
+      "/images/destinasi/laskar-pelangi/laskar-pelangi8.jpg",
     ],
 
     itinerary: [
@@ -537,6 +558,12 @@ export const paketList: Paket[] = [
       "/images/paket/hopping/hopping18.jpg",
       "/images/paket/hopping/hopping19.jpg",
       "/images/paket/hopping/hopping20.jpg",
+      //citytour
+      "/images/destinasi/rumah-adat/rumah-adat1.jpg",
+      "/images/destinasi/rumah-adat/rumah-adat2.jpg",
+      "/images/destinasi/tugu-satam/tugusatam1.jpg",
+      "/images/destinasi/tugu-satam/tugusatam2.jpg",
+      "/images/destinasi/tugu-satam/tugusatam3.jpg",
     ],
     itinerary: [
       {
@@ -643,6 +670,21 @@ export const paketList: Paket[] = [
       "/images/paket/hopping/hopping18.jpg",
       "/images/paket/hopping/hopping19.jpg",
       "/images/paket/hopping/hopping20.jpg",
+      //citytour
+      "/images/destinasi/rumah-adat/rumah-adat1.jpg",
+      "/images/destinasi/rumah-adat/rumah-adat2.jpg",
+      "/images/destinasi/tugu-satam/tugusatam1.jpg",
+      "/images/destinasi/tugu-satam/tugusatam2.jpg",
+      "/images/destinasi/tugu-satam/tugusatam3.jpg",
+      //belitung timur
+      "/images/destinasi/burung-mandi/burung-mandi1.jpg",
+      "/images/destinasi/burung-mandi/burung-mandi4.jpg",
+      "/images/destinasi/vihara/vihara6.jpg",
+      "/images/destinasi/vihara/vihara7.jpg",
+      "/images/destinasi/vihara/vihara12.jpg",
+      "/images/destinasi/laskar-pelangi/laskar-pelangi11.jpg",
+      "/images/destinasi/laskar-pelangi/laskar-pelangi7.jpg",
+      "/images/destinasi/laskar-pelangi/laskar-pelangi8.jpg",
     ],
     itinerary: [
       {
@@ -803,6 +845,12 @@ export const paketList: Paket[] = [
       "/images/paket/hopping/hopping18.jpg",
       "/images/paket/hopping/hopping19.jpg",
       "/images/paket/hopping/hopping20.jpg",
+      //citytour
+      "/images/destinasi/rumah-adat/rumah-adat1.jpg",
+      "/images/destinasi/rumah-adat/rumah-adat2.jpg",
+      "/images/destinasi/tugu-satam/tugusatam1.jpg",
+      "/images/destinasi/tugu-satam/tugusatam2.jpg",
+      "/images/destinasi/tugu-satam/tugusatam3.jpg",
     ],
     itinerary: [
       {
@@ -951,6 +999,21 @@ export const paketList: Paket[] = [
       "/images/paket/hopping/hopping18.jpg",
       "/images/paket/hopping/hopping19.jpg",
       "/images/paket/hopping/hopping20.jpg",
+      //citytour
+      "/images/destinasi/rumah-adat/rumah-adat1.jpg",
+      "/images/destinasi/rumah-adat/rumah-adat2.jpg",
+      "/images/destinasi/tugu-satam/tugusatam1.jpg",
+      "/images/destinasi/tugu-satam/tugusatam2.jpg",
+      "/images/destinasi/tugu-satam/tugusatam3.jpg",
+      //belitung timur
+      "/images/destinasi/burung-mandi/burung-mandi1.jpg",
+      "/images/destinasi/burung-mandi/burung-mandi4.jpg",
+      "/images/destinasi/vihara/vihara6.jpg",
+      "/images/destinasi/vihara/vihara7.jpg",
+      "/images/destinasi/vihara/vihara12.jpg",
+      "/images/destinasi/laskar-pelangi/laskar-pelangi11.jpg",
+      "/images/destinasi/laskar-pelangi/laskar-pelangi7.jpg",
+      "/images/destinasi/laskar-pelangi/laskar-pelangi8.jpg",
     ],
     itinerary: [
       {

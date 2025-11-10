@@ -6,25 +6,18 @@ import { Filter, X, ChevronLeft, ChevronRight, Eye } from "lucide-react";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { galleryItems, galleryCategories, getGalleryItemsByCategory } from "@/lib/galery"; // <-- pastikan path ini benar (atau gunakan "@/lib/galleryData" jika kamu buat file re-export)
+import { galleryItems, galleryCategories, getGalleryItemsByCategory, type GalleryItem, type GalleryCategory } from "@/lib/galery"; // pastikan path sesuai
 
 type CategoryId = string;
-export type GalleryItem = {
-  id: number;
-  category: CategoryId;
-  image: string;
-  title: string;
-  // optional: thumbnail?: string;
-};
 
 export default function GaleriSection(): JSX.Element {
   const [activeCategory, setActiveCategory] = useState<CategoryId>("all");
   const [filteredItems, setFilteredItems] = useState<GalleryItem[]>(galleryItems);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
-  const [visibleCount, setVisibleCount] = useState<number>(12); // pagination: tampil 12 dulu
+  const [visibleCount, setVisibleCount] = useState<number>(12); // pagination awal
 
-  // ganti kategori -> update filteredItems dan reset pagination
+  // ganti kategori → update filteredItems dan reset pagination
   const handleCategoryChange = (categoryId: CategoryId) => {
     setActiveCategory(categoryId);
     const newItems = getGalleryItemsByCategory(categoryId);
@@ -32,7 +25,7 @@ export default function GaleriSection(): JSX.Element {
     setVisibleCount(12);
   };
 
-  // Memo untuk item yang ditampilkan (paginated)
+  // memo: hanya ambil yang tampil di halaman sekarang
   const displayedItems = useMemo(() => filteredItems.slice(0, visibleCount), [filteredItems, visibleCount]);
 
   const handlePrev = () => {
@@ -53,14 +46,14 @@ export default function GaleriSection(): JSX.Element {
 
   return (
     <section id="galery" className="py-20 bg-gradient-to-br from-slate-50 via-blue-50/30 to-orange-50/20 relative overflow-hidden">
-      {/* Background decorative elements */}
+      {/* background dekoratif */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-32 right-10 w-28 h-28 bg-gradient-to-r from-oceania-sunset/10 to-blue-200/10 rounded-full blur-xl animate-pulse" />
         <div className="absolute bottom-40 left-20 w-36 h-36 bg-gradient-to-r from-blue-200/10 to-oceania-navy/5 rounded-full blur-xl animate-pulse" style={{ animationDelay: "1s" }} />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Header */}
+        {/* header */}
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="text-center mb-8 mt-10">
           <div className="flex items-center justify-center gap-3 mb-6">
             <h1 className="text-4xl md:text-5xl font-bold text-oceania-navy">Galeri Petualangan</h1>
@@ -68,7 +61,7 @@ export default function GaleriSection(): JSX.Element {
           <p className="text-slate-600 text-lg max-w-3xl mx-auto leading-relaxed mb-8">Lihat momen-momen indah yang telah diabadikan dalam setiap perjalanan bersama kami</p>
         </motion.div>
 
-        {/* Filter */}
+        {/* Filter kategori */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }} className="mb-12">
           <div className="flex items-center justify-center gap-2 mb-6">
             <Filter className="w-5 h-5 text-oceania-navy" />
@@ -76,39 +69,34 @@ export default function GaleriSection(): JSX.Element {
           </div>
 
           <div className="flex flex-wrap justify-center gap-3">
-            {galleryCategories.map(
-              (
-                category: any,
-                index: number // jika galleryCategories punya type, ganti any
-              ) => (
-                <motion.button
-                  key={category.id}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => handleCategoryChange(category.id)}
-                  className={`group relative px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 rounded-full font-medium text-xs sm:text-sm md:text-base transition-all duration-300 border-2 backdrop-blur-sm
+            {galleryCategories.map((category: GalleryCategory, index: number) => (
+              <motion.button
+                key={category.id}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => handleCategoryChange(category.id)}
+                className={`group relative px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 rounded-full font-medium text-xs sm:text-sm md:text-base transition-all duration-300 border-2 backdrop-blur-sm
                   ${
                     activeCategory === category.id
                       ? "bg-gradient-to-r from-oceania-sunset to-blue-900 text-white border-oceania-sunset shadow-lg shadow-oceania-sunset/30"
                       : "bg-white/80 text-oceania-navy border-white/50 hover:border-oceania-sunset/30 hover:bg-white/90 hover:shadow-md"
                   }`}
-                >
-                  {activeCategory === category.id && <motion.div layoutId="activeGlow" className="absolute inset-0 bg-gradient-to-r from-oceania-sunset to-blue-900 rounded-full opacity-20 blur-lg" />}
-                  <div className="relative flex items-center gap-1 sm:gap-2">
-                    <span className="text-base sm:text-lg">{category.icon}</span>
-                    <span>{category.label}</span>
-                  </div>
-                </motion.button>
-              )
-            )}
+              >
+                {activeCategory === category.id && <motion.div layoutId="activeGlow" className="absolute inset-0 bg-gradient-to-r from-oceania-sunset to-blue-900 rounded-full opacity-20 blur-lg" />}
+                <div className="relative flex items-center gap-1 sm:gap-2">
+                  <span className="text-base sm:text-lg">{category.icon}</span>
+                  <span>{category.label}</span>
+                </div>
+              </motion.button>
+            ))}
           </div>
         </motion.div>
 
-        {/* Grid (paginated + lazy thumbnails) */}
+        {/* Grid (lazy + pagination) */}
         <motion.div layout className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {displayedItems.map((item: GalleryItem, index: number) => (
             <motion.div
@@ -148,7 +136,7 @@ export default function GaleriSection(): JSX.Element {
               {/* Hover overlay */}
               <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-between p-4">
                 <div className="self-start bg-oceania-sunset/90 text-white text-xs px-3 py-1 rounded-full font-medium transform translate-y-[-10px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-75">
-                  {galleryCategories.find((cat: any) => cat.id === item.category)?.label}
+                  {galleryCategories.find((cat) => cat.id === item.category)?.label}
                 </div>
 
                 <div className="self-center bg-white/50 backdrop-blur-sm rounded-full p-3 transform scale-0 group-hover:scale-100 transition-transform duration-300 delay-100">
@@ -165,7 +153,7 @@ export default function GaleriSection(): JSX.Element {
           ))}
         </motion.div>
 
-        {/* Load More */}
+        {/* tombol load more */}
         {visibleCount < filteredItems.length && (
           <div className="flex justify-center mt-10">
             <Button onClick={handleLoadMore} variant="secondary" className="px-6 py-3 rounded-full text-base font-medium shadow hover:shadow-md transition-all duration-300">
@@ -174,7 +162,7 @@ export default function GaleriSection(): JSX.Element {
           </div>
         )}
 
-        {/* Modal (optimized: load large image only when modal open) */}
+        {/* modal optimized */}
         <AnimatePresence>
           {activeIndex !== null && (
             <motion.div className="fixed inset-0 bg-black/80 flex items-center justify-center z-[9999]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setActiveIndex(null)}>
